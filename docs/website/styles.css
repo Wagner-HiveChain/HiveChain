@@ -2,11 +2,12 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Consolas", "Courier New", monospace;
+    font-family: "JetBrains Mono", monospace;
     text-align: center;
     color: #ffffff;
     background: black;
 }
+
 
 /* Background Image */
 .overlay {
