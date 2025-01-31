@@ -1,21 +1,134 @@
-/* Global Styling */
-body {
+/* ------------------------------- GLOBAL RESET ------------------------------- */
+
+* {
     margin: 0;
     padding: 0;
-    font-family: "JetBrains Mono", monospace;
-    text-align: center;
-    color: #ffffff;
-    background: black;
+    box-sizing: border-box;
 }
 
+/* --------------------------- GLOBAL STYLING --------------------------- */
 
-/* Background Image */
-.overlay {
+body {
+    font-family: "JetBrains Mono", monospace;
+    color: #ffffff;
+    background-color: #000000;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Prevents scrollbars if not needed; remove if scrolling is desired */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --------------------- BACKGROUND & OVERLAY LAYERS --------------------- */
+
+.background-image {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("background.webp") center/cover no-repeat;
-    opacity: 0.15; /* Slight transparency to keep text readable */
+    background: url("background.webp") center center / cover no-repeat;
+    z-index: -2; /* Behind everything else */
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+    z-index: -1; /* Stays behind the content but above the background image */
+}
+
+/* --------------------------- CONTENT STYLING --------------------------- */
+
+.content {
+    max-width: 600px; /* Limits the content width for better readability */
+    padding: 0 1rem; /* Small horizontal padding for mobile */
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.coming-soon {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #f8d800; /* Slightly accent color to draw attention */
+}
+
+/* ----------------------- CTA (CALL TO ACTION) ----------------------- */
+
+.cta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+}
+
+.cta-button {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff5c5c; /* Vibrant color for the main button */
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff7878;
+}
+
+.secondary {
+    background-color: #333333;
+}
+
+.secondary:hover {
+    background-color: #555555;
+}
+
+/* --------------------------- MEDIA QUERIES --------------------------- */
+
+/* Mobile & Smaller Devices */
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        width: 100%; /* Buttons stack and take full width on narrow screens */
+        text-align: center;
+    }
+}
+
+/* Larger Screens / Ultra-Wide */
+@media (min-width: 1500px) {
+    .content h1 {
+        font-size: 3rem;
+    }
+    
+    .content p {
+        font-size: 1.25rem;
+    }
+    
+    .cta-button {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
 }
