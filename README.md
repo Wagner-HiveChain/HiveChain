@@ -4,7 +4,7 @@ md
 # HiveChain: Redefining AI Development
 
 **What if building powerful AI workflows wasn’t restricted by closed, vendor-managed APIs?**  
-What if you—*the developer*—could orchestrate advanced reasoning, memory management, and multi-agent collaboration locally, with full transparency and ownership?
+hat if you—*the developer*—could orchestrate advanced reasoning, memory management, and multi-agent collaboration locally, with full transparency and ownership?
 
 Meet **HiveChain**: an **open-source ecosystem** that flips the AI execution paradigm from corporate back ends to a **developer-centric front end**. By combining powerful AI orchestration with responsible alignment practices and a community-driven ownership model, HiveChain stands at the forefront of **capable and conscientious AI**.
 
