@@ -20,7 +20,15 @@ At HiveChain, we are rethinking what it means to build a successful company. Our
 
 ### 4. Long-Term Value Sharing
 - **Performance-Based Rewards:**  
-  We believe success is best measured by real-world results. Our future plan includes a performance-based dividend system: profits, calculated as company revenue minus expenses, will be shared with those who contribute to our growth. This isn’t a traditional board-dictated dividend—it's a transparent, measurable reward for our collective achievements.
+We believe that success is best measured by real-world results—and that sustainable growth is essential. Our performance-based dividend system is designed to reward those who drive our progress, including our investors and contributors, while ensuring we continue to invest in our future. Here's how it works:
+
+Net Profit Calculation:
+Net profit is defined as the company's revenue minus its expenses.
+
+Dividend and Reinvestment Split:
+Of the net profit, 20% is reserved for reinvestment—fueling future innovation and growth—while the remaining 80% is distributed as dividends to reward our investors and contributors.
+
+This model ensures that while our investors and contributors share in our immediate success, we also maintain a solid foundation for long-term development. The 80/20 split serves as a transparent, concrete benchmark for aligning rewards with performance, and it will be reviewed periodically to adapt to evolving business needs.
 
 - **An Incentive Pool for Early Contributors:**  
   As part of our long-term vision, we are setting aside a 5% equity pool. Initially, this will be offered in the form of convertible notes—notes that, in time, may be transformed into tokenized equity. While the conversion is aspirational and subject to further refinement, the notes will already provide dividend rights based on our actual performance.
