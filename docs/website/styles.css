@@ -142,11 +142,12 @@ body {
 
 .additional-link a {
     text-decoration: none;
-    color: #f8d800; /* Using the accent color */
+    color: #00aaff; /* Changed from yellow (#f8d800) to blue (#00aaff) */
     border-bottom: 1px solid transparent;
     transition: border-bottom 0.3s ease;
 }
 
 .additional-link a:hover {
-    border-bottom: 1px solid #f8d800;
+    border-bottom: 1px solid #00aaff;
 }
+
