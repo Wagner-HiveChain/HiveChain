@@ -132,3 +132,21 @@ body {
         padding: 1rem 2rem;
     }
 }
+
+/* ---------------------- ADDITIONAL LINK STYLING ---------------------- */
+
+.additional-link {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.additional-link a {
+    text-decoration: none;
+    color: #f8d800; /* Using the accent color */
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.additional-link a:hover {
+    border-bottom: 1px solid #f8d800;
+}
