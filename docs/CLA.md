@@ -1,87 +1,24 @@
-# HiveChain Contributor License Agreement
+# Contributor License Agreement (CLA)
 
-*Effective as of the date you submit your contribution to HiveChain.*
+Thank you for your interest in contributing to the HiveChain project. This Contributor License Agreement outlines the terms under which contributions are made to HiveChain. The goal is to ensure that the project’s codebase remains clear in terms of intellectual property rights and that both contributors and maintainers are protected.
 
----
+By making a contribution to this project, you agree to the following terms:
 
-## 1. Definitions
+(a) **Original Work:**  
+The contribution is your own original creation, and you have the legal right to license it to the project. If the contribution includes or is based on work from others, that work must be under an open-source license compatible with HiveChain, and you have the right to submit it under the same license that governs the HiveChain project.
 
-**1.1 "Contribution"**  
-"Contribution" means any original work of authorship—including any modifications or additions to an existing work—that you intentionally submit to HiveChain (the “Project”), whether in source code, documentation, or any other form.
+(b) **License Grant:**  
+You grant the maintainers of HiveChain a perpetual, worldwide, royalty-free, irrevocable license to use, modify, distribute, and sublicense your contribution as part of the project. This means your contribution will be released under the same open-source license that governs the HiveChain project (currently Apache 2.0, unless otherwise specified), allowing it to be freely used in all future versions and distributions of HiveChain ([Building hived (Hive blockchain P2P node) - GitLab](https://gitlab.syncad.com/hive/hive/-/blob/f82e0f1cfd1ecc46652859b0fb9f9fd3b3a9408c/doc/building.md#:~:text=CMake,used%20as%20the%20build%20executor)).
 
-**1.2 "You" or "Your"**  
-Refers to the individual or legal entity that submits a Contribution.
+(c) **No Patent Liability:**  
+If your contribution includes any patented technology, you agree to grant a patent license to the project and its users so that they can freely use, modify, and distribute your contribution without concern for patent claims. In other words, you promise not to bring patent infringement lawsuits against the project or its users for utilizing your contribution as part of HiveChain.
 
-**1.3 "HiveChain"**  
-Refers to the organization that owns and manages the Project.
+(d) **Contribution Record:**  
+You understand that your contribution and identifying information (such as your name and contact information) may be recorded in the project’s history. This record is maintained indefinitely as part of the version control system to preserve the provenance of the code. The information will be redistributed as part of the project’s open development process, consistent with the project’s license.
 
----
+(e) **No Obligation or Warranty:**  
+You are not required to provide support for your contribution, nor is the project obligated to include your contribution. The contribution is provided “as is” without warranties, and the decision to include it in the project will be made by the maintainers based on the project’s needs and quality standards. Likewise, the project does not guarantee that it will use or continue to use your contribution.
 
-## 2. Grant of License
+By contributing, you certify that you have read and agree to this CLA. If you are contributing on behalf of an employer or another entity, you certify that you have the authority to accept these terms on their behalf.
 
-**2.1 Perpetual, Worldwide License:**  
-You hereby grant to HiveChain a perpetual, worldwide, non-exclusive, royalty-free, irrevocable license to use, reproduce, modify, publish, distribute, sublicense, and otherwise exploit Your Contribution (and any derivative works thereof) in any manner and for any purpose, in all media now known or hereafter devised.
-
-**2.2 Assignment of IP:**  
-By submitting a Contribution, You agree that such Contribution becomes the property of HiveChain. You hereby irrevocably assign and transfer to HiveChain all rights, title, and interest in and to the Contribution.
-
-**2.3 No Compensation:**  
-You acknowledge and agree that You will not receive any compensation or royalties for any Contributions You make.
-
----
-
-## 3. Representations and Warranties
-
-**3.1 Original Work:**  
-You represent and warrant that:
-- You have the right to grant the licenses and assignments set forth in this Agreement.
-- Your Contribution is your original work and does not infringe on any copyright, trademark, or other intellectual property rights of any third party.
-- If Your Contribution includes any third-party code or materials, you have obtained all necessary rights or permissions to submit and license such materials under this Agreement.
-
-**3.2 No Conflicting Obligations:**  
-Your submission of a Contribution does not violate any agreement or obligation you have with any third party.
-
----
-
-## 4. Disclaimer and "As-Is" Condition
-
-**4.1 No Warranty:**  
-Your Contributions are provided “as-is,” without warranty of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.
-
-**4.2 Liability Limitation:**  
-In no event shall HiveChain be liable for any damages arising out of or in connection with Your Contribution or this Agreement.
-
----
-
-## 5. Termination
-
-**5.1 Effect of Termination:**  
-This Agreement remains in effect for all Contributions made prior to termination. You may terminate your future participation by ceasing to submit Contributions; however, the rights granted to HiveChain with respect to past Contributions are perpetual.
-
----
-
-## 6. Miscellaneous
-
-**6.1 Governing Law:**  
-This Agreement shall be governed by and construed in accordance with the laws of [Your Jurisdiction]. Any disputes arising out of this Agreement shall be resolved in the appropriate courts of that jurisdiction.
-
-**6.2 Entire Agreement:**  
-This Agreement constitutes the entire agreement between You and HiveChain concerning the Contributions and supersedes any prior or contemporaneous understandings regarding the subject matter herein.
-
-**6.3 Severability:**  
-If any provision of this Agreement is found to be unenforceable or invalid, the remaining provisions shall remain in full force and effect.
-
----
-
-## 7. Acknowledgment
-
-By submitting a Contribution to the HiveChain Project, you acknowledge that you have read, understood, and agree to be bound by the terms of this Contributor License Agreement.
-
-*If you do not agree to these terms, please do not submit any Contributions.*
-
----
-
-**Signature / Electronic Acknowledgment**
-
-- **Name:** ______________________  
-- **Date:** ______________________
+*This Contributor License Agreement is adapted from standard open-source CLA templates (including the Developer Certificate of Origin model) to fit HiveChain’s needs. It is intended to protect both contributors and project maintainers. For reference, portions of this CLA text are inspired by widely used agreements in the open-source community. If you have questions about the CLA or require an exception (for example, contributing under a different license), please contact the project maintainers to discuss it.
