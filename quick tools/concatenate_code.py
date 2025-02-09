@@ -25,8 +25,8 @@ def main():
     # Set the project root to the directory containing this script
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     
-    # Define the output file in the tests directory (create tests if needed)
-    output_dir = os.path.join(project_root, "tests")
+    # Define the output file in the docs directory (create docs if needed)
+    output_dir = os.path.join(project_root, "docs")
     os.makedirs(output_dir, exist_ok=True)
     output_file = os.path.join(output_dir, "combined_code.txt")
     

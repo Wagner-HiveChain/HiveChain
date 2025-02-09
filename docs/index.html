@@ -93,7 +93,7 @@
                 modal.style.display = "block";
                 if (!modal.innerText) {
                     try {
-                        let response = await fetch("tests/combined_code.txt");
+                        let response = await fetch("docs/combined_code.txt");
                         if (response.ok) {
                             modal.innerText = await response.text();
                         } else {
