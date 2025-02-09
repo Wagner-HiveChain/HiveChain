@@ -1,1 +1,33 @@
-".env" 
+# Environment variables
+.env
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+*.log
+
+# Optional: if "pip" and "cd" are not meant to be committed, add them here
+pip/
+cd/
+
+# Other temporary files
+*.tmp
+*.bak
