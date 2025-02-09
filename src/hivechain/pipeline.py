@@ -4,34 +4,37 @@ Module: pipeline.py
 
 Overview:
     This module orchestrates the complete processing of raw user input through the HiveChain pipeline.
-    It validates and formats the input (using a standard or fallback formatter), calls the API, and
-    formats the API response. Optionally, it wraps the response with additional HiveChain metadata.
+    It validates and formats the input (using a standard or fallback formatter), calls the API via the
+    provider adapter through the api_caller module, and formats the API response.
+    Optionally, it wraps the response with additional HiveChain metadata.
 
 Responsibilities:
     1. Input Processing:
-        - Validate raw input.
-        - Use the fallback formatter if the input does not match the expected schema.
-        - Otherwise, use the standard formatter.
+        - Validate raw input using input_formatter.
+        - Use fallback_formatter if the input does not match expected schema.
+        - Otherwise, use standard_formatter.
     
     2. API Invocation:
-        - Determine the model to be used (defaulting to configuration if unspecified).
+        - Determine the model to use (defaulting to the configuration if unspecified).
         - Call the backend API via the api_caller module.
     
     3. Response Wrapping:
-        - If wrap_response is True (or if the raw response appears unwrapped), return a dictionary
-          with keys "raw", "result", and "fallback_used".
+        - If wrap_response is True (or if the raw response is not dict-like), return a dictionary with:
+              "raw": the full API response,
+              "result": the extracted generated text,
+              "fallback_used": a flag indicating if fallback formatting was applied.
         - Otherwise, return the raw API response.
-          
+
 Usage:
-    Call process_request with the raw input and any optional overrides. Set wrap_response=True to
-    obtain HiveChain metadata along with the API response.
+    Call process_request() with the raw input and any optional overrides.
+    Set wrap_response=True to obtain HiveChain metadata along with the API response.
 """
 
 from hivechain.input_formatter import format_input
 from hivechain.fallback_formatter import sanitize_input
 from hivechain.standard_formatter import standard_format_input
 from hivechain.api_caller import call_api
-from hivechain.output_formatter import format_output  # (Unused in this version, but available for further processing)
+# Note: output_formatter is available for further processing if needed.
 from hivechain.hivechain_core import get_config
 
 def process_request(raw_input: str, model_name: str = None, temperature: float = None,
@@ -47,7 +50,7 @@ def process_request(raw_input: str, model_name: str = None, temperature: float =
         wrap_response (bool, optional): If True, returns a dictionary containing:
                                         - "raw": the raw API response,
                                         - "result": the extracted generated text,
-                                        - "fallback_used": a flag indicating if fallback formatting was used.
+                                        - "fallback_used": a flag indicating if fallback formatting was applied.
                                         Defaults to False (returning the raw response).
 
     Returns:
@@ -69,12 +72,11 @@ def process_request(raw_input: str, model_name: str = None, temperature: float =
     # Step 3: Call the API using the structured prompt.
     raw_response = call_api(structured_prompt, model_name, temperature, max_tokens)
     
-    # Debug: Print type information (remove or comment out in production)
+    # Debug: Uncomment the lines below for debugging purposes.
     # print("DEBUG: wrap_response =", wrap_response)
     # print("DEBUG: type(raw_response) =", type(raw_response))
     
-    # Step 4: Wrap the response if requested or if raw_response appears to be unwrapped.
-    # If wrap_response is True OR if raw_response doesn't support dict-style access, then wrap.
+    # Step 4: Wrap the response if requested or if the raw response is not dict-like.
     if wrap_response or not hasattr(raw_response, "get"):
         try:
             generated_text = raw_response.choices[0].message.content

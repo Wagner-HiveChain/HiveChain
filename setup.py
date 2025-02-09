@@ -15,6 +15,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://www.hivechain.dev",
+    # This will include all packages under src, including hivechain and its submodules (e.g., provider_adapters)
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     classifiers=[
@@ -30,7 +31,6 @@ setup(
     ],
     entry_points={
         "console_scripts": [
- 
             "hivechain-run=hivechain.cli:main",
         ]
     },

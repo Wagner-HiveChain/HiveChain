@@ -20,18 +20,16 @@ def standard_format_input(raw_input: str) -> dict:
             - "prompt": the formatted text,
             - "fallback": False (indicating no fallback was applied),
             - "details": a note describing that standard formatting was used.
+            
+    #Placeholder: Extend with additional formatting logic if needed (e.g., punctuation, capitalization).
     """
     # Minimal formatting: trim whitespace.
     formatted = raw_input.strip()
     
-    # Placeholder for additional formatting logic:
-    # e.g., ensuring proper punctuation, sentence capitalization, etc.
-    # For now, we assume the input is nearly correct.
-    
     return {
         "prompt": formatted,
         "fallback": False,
-        "details": "Standard formatting applied."
+        "details": "Standard formatting applied. #Placeholder for extended formatting logic."
     }
 
 # For local testing, you can uncomment the block below:

@@ -5,7 +5,7 @@ Module: run.py
 Responsibility:
   - Provide an interactive CLI that uses the complete HiveChain pipeline.
   - Force the use of the GPT-4o mini model.
-  - Handle user conversation, exit gracefully, and print the standardized output.
+  - Handle user conversation, exit gracefully, and print the standardized output with HiveChain metadata.
 """
 
 import sys
@@ -31,10 +31,13 @@ def main():
                 print("Exiting conversation.")
                 break
             
-            # Process the request through the full pipeline.
-            response = process_request(raw_input=prompt, model_name=model)
+            # Process the request through the full pipeline with metadata wrapping enabled.
+            response = process_request(raw_input=prompt, model_name=model, wrap_response=True)
+            
             # Print the standardized output (assuming "result" holds the generated text).
             print("GPT-4o Mini:", response.get("result", ""), "\n")
+            if response.get("fallback_used", False):
+                print("Warning: Fallback formatting was applied to the input.\n")
         except KeyboardInterrupt:
             print("\nConversation interrupted. Goodbye!")
             sys.exit(0)

@@ -18,9 +18,11 @@ def format_input(raw_input: str) -> dict:
         dict: A dictionary containing:
             - "prompt": the processed text.
             - "valid": a boolean flag indicating whether the input fits our expected schema.
-            
+    
     Current simple rule:
       - If the stripped input has fewer than 10 characters, it is considered not valid.
+      
+    #Placeholder: Add more complex validation logic (e.g., regex checks, JSON schema validation) as needed.
     """
     cleaned_input = raw_input.strip()
     # Simple rule: inputs shorter than 10 characters are flagged as not valid.

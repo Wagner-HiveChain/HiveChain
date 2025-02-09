@@ -31,12 +31,10 @@ def sanitize_input(raw_input: str) -> dict:
     # For now, we simulate fallback formatting by simply stripping the input and appending a note.
     sanitized_prompt = raw_input.strip()
     
-    # Here, you would typically call your formatting agent, for example:
-    # response = call_formatting_agent(raw_input)
-    # sanitized_prompt = response.get("formatted_prompt")
-    #
-    # And if needed, extract details or tags:
-    # details = response.get("details", "Fallback formatting applied; details not available.")
+    # Placeholder for API call to formatting agent:
+    # response = call_formatting_agent(raw_input)  # #Placeholder: integrate actual agent call
+    # sanitized_prompt = response.get("formatted_prompt", sanitized_prompt)
+    # details = response.get("details", "Fallback formatting applied; details not available.")  # #Placeholder
     
     # For this stub, we simply append a note indicating fallback was used.
     sanitized_prompt += "\n\n[Note: Fallback formatting applied. Some content may have been sanitized.]"
@@ -44,7 +42,7 @@ def sanitize_input(raw_input: str) -> dict:
     return {
         "prompt": sanitized_prompt,
         "fallback": True,
-        "details": "Fallback formatting applied. Replace with agent response when implemented."
+        "details": "Fallback formatting applied. Replace with agent response when implemented. #Placeholder"
     }
 
 # For quick local testing, you can uncomment the block below:

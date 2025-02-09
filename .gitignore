@@ -24,10 +24,13 @@ Thumbs.db
 # Log files
 *.log
 
-# Optional: if "pip" and "cd" are not meant to be committed, add them here
-pip/
-cd/
-
 # Other temporary files
 *.tmp
 *.bak
+
+# Directories from installation that are not meant to be in the library
+pip/
+cd/
+
+# Generated files
+tests/combined_code.txt
