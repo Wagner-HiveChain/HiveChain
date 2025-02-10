@@ -1,0 +1,2692 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>HiveChain Codebase</title>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css' rel='stylesheet' />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js'></script>
+</head>
+<body>
+  <a id='top'></a>
+  <h1>HiveChain Codebase</h1>
+  <p>Last updated: 2025-02-10 04:57:52</p>
+  <h2>Table of Contents</h2>
+  <ul>
+    <li><a href='#file-0'>README.md</a></li>
+    <li><a href='#file-1'>config.json</a></li>
+    <li><a href='#file-2'>docs/Apache License 2.0.md</a></li>
+    <li><a href='#file-3'>docs/CLA.md</a></li>
+    <li><a href='#file-4'>docs/CODE_OF_CONDUCT.md</a></li>
+    <li><a href='#file-5'>docs/CONTRIBUTING.md</a></li>
+    <li><a href='#file-6'>docs/Commercial License Agreement.md</a></li>
+    <li><a href='#file-7'>docs/FAQ.md</a></li>
+    <li><a href='#file-8'>docs/Getting_Started.md</a></li>
+    <li><a href='#file-9'>docs/High-Level_Roadmap.md</a></li>
+    <li><a href='#file-10'>docs/Long-Term aspirational plan to reward contributions.md</a></li>
+    <li><a href='#file-11'>docs/Trademark_Statement.md</a></li>
+    <li><a href='#file-12'>docs/Vision.md</a></li>
+    <li><a href='#file-13'>docs/index.html</a></li>
+    <li><a href='#file-14'>docs/under-construction.html</a></li>
+    <li><a href='#file-15'>docs/website/styles.css</a></li>
+    <li><a href='#file-16'>quick tools/concatenate_code.py</a></li>
+    <li><a href='#file-17'>run.py</a></li>
+    <li><a href='#file-18'>setup.py</a></li>
+    <li><a href='#file-19'>src/hivechain/__init__.py</a></li>
+    <li><a href='#file-20'>src/hivechain/agent_manager.py</a></li>
+    <li><a href='#file-21'>src/hivechain/api_caller.py</a></li>
+    <li><a href='#file-22'>src/hivechain/cli.py</a></li>
+    <li><a href='#file-23'>src/hivechain/config_handler.py</a></li>
+    <li><a href='#file-24'>src/hivechain/config_validator.py</a></li>
+    <li><a href='#file-25'>src/hivechain/fallback_formatter.py</a></li>
+    <li><a href='#file-26'>src/hivechain/hivechain_core.py</a></li>
+    <li><a href='#file-27'>src/hivechain/input_formatter.py</a></li>
+    <li><a href='#file-28'>src/hivechain/memory_manager.py</a></li>
+    <li><a href='#file-29'>src/hivechain/output_formatter.py</a></li>
+    <li><a href='#file-30'>src/hivechain/pipeline.py</a></li>
+    <li><a href='#file-31'>src/hivechain/provider_adapters/__init__.py</a></li>
+    <li><a href='#file-32'>src/hivechain/provider_adapters/deepseek_provider.py</a></li>
+    <li><a href='#file-33'>src/hivechain/provider_adapters/huggingface_provider.py</a></li>
+    <li><a href='#file-34'>src/hivechain/provider_adapters/openai_provider.py</a></li>
+    <li><a href='#file-35'>src/hivechain/request_builder.py</a></li>
+    <li><a href='#file-36'>src/hivechain/response_processor.py</a></li>
+    <li><a href='#file-37'>src/hivechain/retriever.py</a></li>
+    <li><a href='#file-38'>src/hivechain/standard_formatter.py</a></li>
+  </ul>
+  <hr>
+  <h2 id='file-0'>README.md</h2>
+  <pre><code class='language-markdown'># HiveChain: Redefining AI Development
+
+**What if building powerful AI workflows wasn’t restricted by closed, vendor-managed APIs?**  
+What if you—*the developer*—could orchestrate advanced reasoning, memory management, and multi-agent collaboration locally, with full transparency and a performance-based rewards model?
+
+Meet **HiveChain**: an **open-source ecosystem** that flips the AI execution paradigm from corporate back ends to a **developer-centric front end**. By combining powerful AI orchestration with responsible alignment practices and a transparent rewards system, HiveChain stands at the forefront of **capable and conscientious AI**.
+
+---
+
+## Table of Contents
+
+1. [Vision &amp; Purpose](#vision--purpose)
+2. [Key Features](#key-features)
+3. [Why HiveChain?](#why-hivechain)
+4. [Alignment in Practice](#alignment-in-practice)
+5. [Contributor Incentive Model](#contributor-incentive-model)
+6. [Open-Book Transparency](#open-book-transparency)
+7. [Monetization Strategy](#monetization-strategy)
+8. [Roadmap &amp; Disclaimer](#roadmap--disclaimer)
+9. [Getting Started](#getting-started)
+10. [Contributing &amp; Community Support](#contributing--community-support)
+11. [Join Us](#join-us)
+
+---
+
+## Vision &amp; Purpose
+
+### A Bold New Era for AI
+
+Most AI ecosystems today are locked behind opaque APIs and cloud services. This restricts how models interact, how memory is managed, and how agent-based tools evolve. **HiveChain** empowers developers to:
+
+- **Regain Control:** Run advanced workflows locally, with no vendor lock-in.
+- **Own the AI:** Contribute, earn rewards, and participate in a transparent, performance-based system.
+- **Integrate Responsible Practices:** Harness advanced AI capabilities while incorporating ethical and safety considerations from the start.
+
+We believe in **AI with purpose**: forging a future where both capabilities and accountability advance hand in hand.
+
+---
+
+## Key Features
+
+1. **Multi-Model Orchestration**
+   - Seamlessly integrate OpenAI, DeepSeek, Mistral, LLaMA, and others.
+   - Switch between models at will—no more single-vendor bottlenecks.
+
+2. **Local Reasoning &amp; Memory**
+   - Full front-end **Retrieval-Augmented Generation (RAG)** and context management.
+   - Reproduce sophisticated AI workflows in your own environment.
+
+3. **Agent-Based Execution**
+   - Chain together specialized AI agents to tackle multi-step tasks.
+   - Automate context-passing and dynamic reasoning for complex workflows.
+
+4. **Alignment-Conscious by Design**
+   - Offers soft prompts, best practices, and optional guardrails without sacrificing developer autonomy.
+   - Provides transparent alignment logs so you can see exactly how safety considerations come into play.
+
+5. **Developer-Centric Freedom**
+   - No forced ecosystem dependencies; HiveChain is fully open-source and built by developers for developers.
+
+---
+
+## Why HiveChain?
+
+### The Gap
+
+- **Closed-Source APIs** limit how far developers can push new AI paradigms.
+- **Cloud Dependencies** hand ultimate control to service providers.
+- **Alignment as an Afterthought** leaves critical safety and ethical questions unaddressed.
+
+### Our Response
+
+- **Open, Front-End Execution:** Bring the “brain” of advanced AI to your local environment, not a distant server.
+- **Responsible Yet Unrestricted:** Integrate best practices from the outset without stifling innovation.
+- **Transparent Rewards:** Ensure that every success is shared with those who contribute to our growth.
+
+---
+
+## Alignment in Practice
+
+AI development often focuses heavily on capabilities, with alignment treated as an afterthought. At HiveChain, we believe **alignment is critical** from the start.
+
+1. **Built-in Alignment Hooks**
+   - Our library includes hooks that can log, analyze, and optionally guide AI outputs. Developers can customize the depth of these interventions for their use case.
+
+2. **Developer-Controlled “Soft Guardrails”**
+   - Rather than imposing top-down restrictions, HiveChain offers soft prompts and educational nudges to encourage responsible usage.
+   - When discussions stray into sensitive territory, the system gently flags them for review.
+
+3. **Alignment Data Sharing**
+   - We maintain a separate repository of alignment research and anonymized logs (where permissible) to accelerate the broader community’s work in AI safety.
+
+4. **Continual Evolution**
+   - As methods advance, HiveChain will continuously update its best practices, keeping alignment front and center.
+
+---
+
+## Contributor Incentive Model
+
+HiveChain values every contribution and is committed to rewarding those who help shape our platform through a transparent, performance-based rewards system.
+
+### How It Works
+
+1. **AI-Driven Benchmarking**
+   - A specialized LLM system evaluates pull requests, design proposals, bug fixes, and documentation.
+   - Contributions are scored based on *impact, quality, and innovation*.
+
+2. **Convertible Notes for Early Contributors**
+   - Early contributions will be recognized with convertible notes representing a **5% equity pool**.
+   - These notes grant dividend rights based on our performance and may, in the future, be converted into tokenized equity (subject to further refinement).
+
+3. **Transparent Rewards**
+   - Our performance-based dividend system ensures that success is shared with both our investors and contributors.
+
+---
+
+## Open-Book Transparency
+
+### 100% Public Financials
+
+HiveChain operates under an **open-book policy**, documenting:
+
+- **Revenue Streams:** Donations, sponsorships, or pro-tier subscriptions.
+- **Expenses:** Infrastructure, development grants, marketing, and more.
+- **Disbursements:** Direct allocations to community contributors.
+
+### Governance Disclosures
+
+- **No Hidden Salaries:** All compensations and stipends are openly disclosed.
+- **Community Oversight:** Governance decisions are made transparently, ensuring alignment with collective goals.
+
+---
+
+## Monetization Strategy
+
+HiveChain aims to remain financially sustainable without compromising its core open-source values:
+
+1. **Donation &amp; Community Funding (Early Stage)**
+   - Initially relying on donations and sponsorships to fund development.
+
+2. **Pro Version &amp; Enterprise Support (Future Offering)**
+   - An optional **Pro tier** will provide advanced enterprise-focused features (e.g., team collaboration, extended security, specialized performance analytics).
+   - The fundamental features of HiveChain remain free to ensure AI accessibility.
+
+3. **Strategic Partnerships &amp; Services (Long-Term)**
+   - Potential collaborations with enterprises, offering specialized consulting or hosting solutions to support continued R&amp;D and best practices.
+
+Our revenue approach ensures that we balance **open availability** with the practical resources needed to drive HiveChain’s evolution.
+
+---
+
+## Roadmap &amp; Disclaimer
+
+Below is a **flexible roadmap** highlighting our *current aspirations* for HiveChain’s development. These timelines and goals may evolve as the project matures.
+
+1. **Alpha (Targeting Q1 2025)**
+   - Release of Python &amp; Java core libraries.
+   - Foundational agent-based execution and local RAG/memory features.
+   - Initial alignment hooks for soft guardrails.
+
+2. **Beta (Targeting Q2 2025)**
+   - Expanded multi-model support (e.g., LLaMA, Mistral).
+   - Enhanced alignment logs and developer-configurable guardrails.
+   - Early prototype of the contributor incentive dashboard.
+
+3. **GUI-Integrated Platform (Tentative Q3 2025)**
+   - Visual interface for chaining agents, monitoring AI interactions, and orchestrating complex workflows.
+   - Real-time alignment notifications and analytics for easier oversight.
+
+4. **Pro Tier Preview (Estimated Q4 2025)**
+   - Optional enterprise enhancements like advanced security and collaboration tools.
+   - Milestones to refine revenue distribution mechanisms.
+
+5. **Long-Term Evolution (Ongoing)**
+   - Continued research, extended language coverage, deeper integrations, and community-led innovations.
+   - Further enhancements to our contributor incentive model as HiveChain grows.
+
+&gt; **Disclaimer:** The timeline and features in this roadmap are *aspirational targets* that may change as we adapt to developer feedback, resource availability, and the evolving AI landscape.
+
+---
+
+## Getting Started
+
+### 1. Installing HiveChain
+&gt; **Note:** The initial Alpha release is *in progress*. The following commands represent our planned install process:
+```bash
+# Python (PyPI)
+pip install hivechain
+
+# Java (Maven)
+&lt;dependency&gt;
+  &lt;groupId&gt;com.hivechain&lt;/groupId&gt;
+  &lt;artifactId&gt;hivechain-core&lt;/artifactId&gt;
+  &lt;version&gt;0.1.0&lt;/version&gt;
+&lt;/dependency&gt;
+
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-1'>config.json</h2>
+  <pre><code class='language-json'>{
+  &quot;default_provider&quot;: &quot;openai&quot;,
+  &quot;providers&quot;: {
+    &quot;openai&quot;: {
+      &quot;api_key_env&quot;: &quot;OPENAI_API_KEY&quot;,
+      &quot;models&quot;: {
+        &quot;o1&quot;: {
+          &quot;engine&quot;: &quot;o1&quot;,
+          &quot;type&quot;: &quot;openai&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 200000,
+          &quot;max_token_output&quot;: 200000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.015,
+            &quot;cached_input&quot;: 0.0075,
+            &quot;output&quot;: 0.060
+          }
+        },
+        &quot;o3-mini&quot;: {
+          &quot;engine&quot;: &quot;o3-mini&quot;,
+          &quot;type&quot;: &quot;openai&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 200000,
+          &quot;max_token_output&quot;: 200000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.0011,
+            &quot;cached_input&quot;: 0.00055,
+            &quot;output&quot;: 0.0044
+          }
+        },
+        &quot;gpt-4o&quot;: {
+          &quot;engine&quot;: &quot;gpt-4o&quot;,
+          &quot;type&quot;: &quot;openai&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 128000,
+          &quot;max_token_output&quot;: 128000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.0025,
+            &quot;cached_input&quot;: 0.00125,
+            &quot;output&quot;: 0.0100
+          }
+        },
+        &quot;gpt-4o-mini&quot;: {
+          &quot;engine&quot;: &quot;gpt-4o-mini&quot;,
+          &quot;type&quot;: &quot;openai&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 128000,
+          &quot;max_token_output&quot;: 128000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.00015,
+            &quot;cached_input&quot;: 0.000075,
+            &quot;output&quot;: 0.0006
+          }
+        },
+        &quot;gpt-3.5-turbo&quot;: {
+          &quot;engine&quot;: &quot;gpt-3.5-turbo&quot;,
+          &quot;type&quot;: &quot;openai&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 4096,
+          &quot;max_token_output&quot;: 4096,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.0015,
+            &quot;cached_input&quot;: 0.00075,
+            &quot;output&quot;: 0.0020
+          }
+        }
+      }
+    },
+    &quot;deepseek&quot;: {
+      &quot;api_key_env&quot;: &quot;DEEPSEEK_API_KEY&quot;,
+      &quot;models&quot;: {
+        &quot;deepseek-v3&quot;: {
+          &quot;engine&quot;: &quot;deepseek-v3&quot;,
+          &quot;type&quot;: &quot;deepseek&quot;,
+          &quot;default_temperature&quot;: 0.6,
+          &quot;max_token_input&quot;: 128000,
+          &quot;max_token_output&quot;: 128000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.00014,
+            &quot;cached_input&quot;: 0.00007,
+            &quot;output&quot;: 0.00219
+          }
+        },
+        &quot;deepseek-r1&quot;: {
+          &quot;engine&quot;: &quot;deepseek-r1&quot;,
+          &quot;type&quot;: &quot;deepseek&quot;,
+          &quot;default_temperature&quot;: 0.6,
+          &quot;max_token_input&quot;: 64000,
+          &quot;max_token_output&quot;: 8000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.00027,
+            &quot;cached_input&quot;: 0.00007,
+            &quot;output&quot;: 0.00110
+          }
+        }
+      }
+    },
+    &quot;anthropic&quot;: {
+      &quot;api_key_env&quot;: &quot;ANTHROPIC_API_KEY&quot;,
+      &quot;models&quot;: {
+        &quot;claude-3.5-sonnet&quot;: {
+          &quot;engine&quot;: &quot;claude-3.5-sonnet&quot;,
+          &quot;type&quot;: &quot;anthropic&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 200000,
+          &quot;max_token_output&quot;: 200000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.0030,
+            &quot;cached_input&quot;: 0.0003,
+            &quot;output&quot;: 0.015
+          }
+        },
+        &quot;claude-3.5-haiku&quot;: {
+          &quot;engine&quot;: &quot;claude-3.5-haiku&quot;,
+          &quot;type&quot;: &quot;anthropic&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 200000,
+          &quot;max_token_output&quot;: 200000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.0008,
+            &quot;cached_input&quot;: 0.00008,
+            &quot;output&quot;: 0.004
+          }
+        },
+        &quot;claude-3-opus&quot;: {
+          &quot;engine&quot;: &quot;claude-3-opus&quot;,
+          &quot;type&quot;: &quot;anthropic&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 200000,
+          &quot;max_token_output&quot;: 200000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.00375,
+            &quot;cached_input&quot;: 0.0003,
+            &quot;output&quot;: 0.015
+          }
+        }
+      }
+    },
+    &quot;google&quot;: {
+      &quot;api_key_env&quot;: &quot;GOOGLE_API_KEY&quot;,
+      &quot;models&quot;: {
+        &quot;gemini-2.0-flash&quot;: {
+          &quot;engine&quot;: &quot;gemini-2.0-flash&quot;,
+          &quot;type&quot;: &quot;google&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 128000,
+          &quot;max_token_output&quot;: 128000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: 0.0025,
+            &quot;cached_input&quot;: 0.00125,
+            &quot;output&quot;: 0.01
+          }
+        }
+      }
+    },
+    &quot;meta&quot;: {
+      &quot;api_key_env&quot;: &quot;none&quot;,
+      &quot;models&quot;: {
+        &quot;llama-3.1&quot;: {
+          &quot;engine&quot;: &quot;llama-3.1&quot;,
+          &quot;type&quot;: &quot;meta&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 128000,
+          &quot;max_token_output&quot;: 128000,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: null,
+            &quot;cached_input&quot;: null,
+            &quot;output&quot;: null
+          }
+        }
+      }
+    },
+    &quot;huggingface&quot;: {
+      &quot;api_key_env&quot;: &quot;none&quot;,
+      &quot;models&quot;: {
+        &quot;mistral-7b&quot;: {
+          &quot;engine&quot;: &quot;mistral-7b&quot;,
+          &quot;type&quot;: &quot;huggingface&quot;,
+          &quot;default_temperature&quot;: 0.5,
+          &quot;max_token_input&quot;: 8192,
+          &quot;max_token_output&quot;: 8192,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: null,
+            &quot;cached_input&quot;: null,
+            &quot;output&quot;: null
+          }
+        }
+      }
+    },
+    &quot;alibaba&quot;: {
+      &quot;api_key_env&quot;: &quot;none&quot;,
+      &quot;models&quot;: {
+        &quot;qwen-2.5-max&quot;: {
+          &quot;engine&quot;: &quot;qwen-2.5-max&quot;,
+          &quot;type&quot;: &quot;alibaba&quot;,
+          &quot;default_temperature&quot;: 0.7,
+          &quot;max_token_input&quot;: 8192,
+          &quot;max_token_output&quot;: 8192,
+          &quot;per_token&quot;: {
+            &quot;input&quot;: null,
+            &quot;cached_input&quot;: null,
+            &quot;output&quot;: null
+          }
+        }
+      }
+    }
+  },
+  &quot;parameter_limits&quot;: {
+    &quot;temperature&quot;: {
+      &quot;min&quot;: 0.0,
+      &quot;max&quot;: 1.0
+    },
+    &quot;max_tokens&quot;: {
+      &quot;min&quot;: 1,
+      &quot;max&quot;: 200000
+    }
+  },
+  &quot;features&quot;: {
+    &quot;use_memory&quot;: true,
+    &quot;use_retrieval&quot;: false
+  }
+}
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-2'>docs/Apache License 2.0.md</h2>
+  <pre><code class='language-markdown'># Apache License 2.0 with HiveChain Commercial Clause
+
+## Apache License
+
+Version 2.0, January 2004
+
+Copyright (c) HiveChain
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+## Additional Clause for HiveChain Commercial Use
+
+In addition to the terms of the Apache 2.0 License, **commercial use of HiveChain software requires a separate commercial license.**
+
+1. **Free Use for Individuals &amp; Research**
+   - This software is free to use for personal, educational, and non-commercial research purposes.
+   - Open-source modifications and non-commercial forks are permitted under Apache 2.0.
+
+2. **Commercial Licensing Requirement**
+   - Any business, organization, or entity using HiveChain for **commercial purposes** must obtain a commercial license.
+   - The HiveChain Commercial License governs business usage and includes fair pricing policies and governance rules.
+   - The commercial license terms can be found in the **HiveChain Commercial License Agreement**.
+
+3. **License Enforcement**
+   - HiveChain reserves the right to **verify fair use** and enforce compliance with commercial licensing terms.
+   - Businesses that fail to obtain a commercial license may be required to retroactively purchase one or cease usage.
+
+For details on commercial licensing, visit: **[HiveChain Commercial License Agreement]**
+
+By using this software, you acknowledge that you understand and agree to these licensing terms.
+
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-3'>docs/CLA.md</h2>
+  <pre><code class='language-markdown'># HiveChain Contributor License Agreement (CLA)
+
+## Introduction
+Thank you for your interest in contributing to the HiveChain project. This Contributor License Agreement (CLA) defines the terms under which contributions are made to HiveChain, ensuring that all intellectual property rights are retained by HiveChain and that the project remains free for personal use while maintaining commercial licensing requirements.
+
+By contributing to this project, you agree to the following terms:
+
+---
+
+## 1. **Ownership &amp; Intellectual Property Rights**  
+(a) All contributions to HiveChain become the **sole property of HiveChain**. Contributors retain no ownership or IP rights over their contributions.  
+(b) Any work submitted must be original, and contributors must have the legal right to assign ownership to HiveChain. If third-party work is included, it must be under a license that allows HiveChain to assume full ownership and control.
+
+## 2. **License Grant &amp; Usage**  
+(a) HiveChain grants **free use of the library for individuals and non-commercial purposes**.  
+(b) **Businesses must obtain a paid licensing agreement** to use HiveChain commercially.  
+(c) License pricing will be **affordable and subject to periodic review**.  
+(d) HiveChain retains the right to **modify license terms** for future versions.  
+(e) Businesses that have already obtained a valid license will **retain their right to use HiveChain under the original terms**, even if the business model changes in the future. Prices for continued use may be adjusted over time, but will remain **reasonable and subject to predefined rules** to ensure fairness.  
+(f) HiveChain reserves the right to conduct **fair use verification** to ensure that businesses claiming non-commercial use are complying with the licensing requirements.  
+
+## 3. **Patents &amp; Liability**  
+(a) If your contribution includes patented technology, you grant HiveChain and its users a **free, non-exclusive, irrevocable license** to use, modify, and distribute the patented material **as part of HiveChain**.  
+(b) You agree **not to assert patent claims** against HiveChain or its users for any portion of the project that includes your contribution.  
+
+## 4. **Future Paid Tools &amp; Licensing**  
+(a) Future tools built on HiveChain may be open-source but will **not be freely licensed for commercial use**.  
+(b) These tools will be available under **separate commercial licensing agreements**.  
+(c) Any modifications or derivatives of HiveChain must remain under HiveChain’s governance and cannot be relicensed under a more restrictive license by third parties, ensuring continuity and alignment with HiveChain’s open-source principles.  
+
+## 5. **Transparency &amp; Dispute Resolution**  
+(a) All contributions and contributor records are **public and permanently recorded** as part of the version control system.  
+(b) **Disputes over contributions will be resolved transparently within the HiveChain governance process**.  
+(c) HiveChain **does not require NDAs or closed agreements** and aims to operate as an open-book project with publicly available financials and governance records.  
+
+## 6. **No Obligation &amp; Warranties**  
+(a) Contributors are **not obligated to provide ongoing support** for their contributions.  
+(b) HiveChain is **not required to use or retain** any contribution permanently.  
+(c) All contributions are provided **&quot;as is&quot;** without warranties or guarantees.  
+
+---
+
+By contributing, you acknowledge that you have read and agree to this CLA. If you are contributing on behalf of an employer or another entity, you certify that you have the authority to accept these terms on their behalf.
+
+*This CLA is designed to align with HiveChain’s mission of transparency, intellectual property retention, and ethical AI development. If you have questions, contact the HiveChain maintainers.*
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-4'>docs/CODE_OF_CONDUCT.md</h2>
+  <pre><code class='language-markdown'># Code of Conduct
+
+## Our Pledge
+We, as members, contributors, and leaders of the HiveChain community, pledge to make participation in our project a harassment-free experience for everyone. We commit to treating everyone with respect, professionalism, and patience, regardless of background or experience. Our community is built on collaboration and trust, and we will work together to foster an environment that is welcoming and inclusive.
+
+## Our Standards
+Examples of behavior that contribute to a positive environment for our community include:
+- Demonstrating empathy and kindness toward others
+- Being respectful of differing opinions, viewpoints, and experiences
+- Providing and gracefully accepting constructive feedback
+- Accepting responsibility and apologizing when mistakes occur, and learning from them
+- Focusing on what is best for the community and the project
+
+Examples of unacceptable behavior include:
+- The use of sexualized language or imagery, and unwelcome sexual attention or advances
+- Trolling, insulting or derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others’ private information (such as a physical or email address) without explicit permission
+- Other conduct that could reasonably be considered inappropriate in a professional setting
+
+## Responsibilities &amp; Enforcement
+Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior. Maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that do not align with this Code of Conduct. They will communicate reasons for moderation decisions when appropriate.
+
+## Scope
+This Code of Conduct applies within all project spaces—such as issue trackers, discussion forums, chat channels, and project events—and it also applies when an individual is officially representing the project in public spaces. Representation includes acting as a maintainer, using an official project e-mail address or social media account, or participating as an appointed representative at an online or offline event.
+
+## Enforcement
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the HiveChain project team (refer to the project’s repository or website for contact information). All complaints will be reviewed and investigated promptly and fairly. Project maintainers are obligated to respect the privacy and security of the reporter and any others involved in an incident.
+
+Project maintainers who do not follow or enforce this Code of Conduct in good faith may face temporary or permanent consequences as determined by the project’s leadership.
+
+## Attribution
+This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available on the Contributor Covenant website. For answers to common questions about this Code of Conduct, see the FAQ on the Contributor Covenant website or contact the HiveChain maintainers for assistance.
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-5'>docs/CONTRIBUTING.md</h2>
+  <pre><code class='language-markdown'># Contributing
+
+Thank you for considering contributing to HiveChain! Your involvement helps shape the future of AI integration and makes HiveChain more robust and useful for everyone. This guide outlines how to get involved and the best practices to follow.
+
+## How to Contribute
+1. **Fork the Repository:**  
+   Fork the HiveChain GitHub repository to your account to create a personal copy of the project.
+2. **Create a Branch:**  
+   Create a new branch in your fork for your contribution. Give it a descriptive name (e.g., `feature/add-XYZ-connector` or `bugfix/fix-integration-issue`) to indicate what you are working on.
+3. **Make Changes:**  
+   Develop your feature or bug fix in your branch. Follow the coding style and structure of the existing code. If you add a new integration module or significant feature, include documentation or comments to help others understand your work.
+4. **Write Tests (If Applicable):**  
+   If the project has automated tests, consider writing tests for your changes. This helps catch any issues early and ensures that your contribution does not break existing functionality.
+5. **Commit Your Changes:**  
+   Commit your changes with clear and descriptive commit messages that briefly state what was changed and why (e.g., `Add support for XYZ API connector to improve data import functionality`).
+6. **Push and Open a Pull Request:**  
+   Push your branch to your GitHub fork and open a Pull Request (PR) to the main HiveChain repository. In the PR description, provide a concise summary of your changes, why they are needed, and any relevant context. If your PR addresses an open issue, reference that issue number (e.g., “Fixes #42”).
+7. **Collaborate During Review:**  
+   A maintainer will review your pull request and may request changes or ask clarifying questions. Please be open to this feedback. Update your PR by pushing additional commits to your branch. The PR will automatically reflect these updates.
+8. **Sign the CLA:**  
+   Before your contribution can be merged, you need to sign the Contributor License Agreement (if you haven’t already done so). This is usually a quick process (often via an online form or bot instruction) and is required to ensure that you agree to license your contribution under the project’s terms. See the **Contributor License Agreement** document for details.
+
+## Code Style and Guidelines
+- **Consistency:**  
+  Keep your code style consistent with the project. For Python code, follow PEP 8 guidelines. We recommend using linters/formatters (such as `flake8` or `black`) to format your code automatically.
+- **Documentation:**  
+  Update documentation for any user-facing changes. This might mean editing the README, adding a section to the Getting Started guide, or commenting your code as needed.
+- **Focused Commits/PRs:**  
+  Try to make each pull request focused on one topic or fix. Smaller, focused PRs are easier to review and merge. If you have multiple unrelated changes, split them into separate PRs.
+
+## Communication
+- **Opening Issues:**  
+  If you have an idea or find a bug, feel free to open an issue on GitHub to discuss it before investing time in code changes. This can help gather input from maintainers or the community.
+- **Community Channels:**  
+  Join our community channels (such as Slack, Discord, or a mailing list, as listed on our site) to ask questions and engage with other contributors.
+- **Respect and Professionalism:**  
+  All interactions in the project are governed by our Code of Conduct. Be respectful and constructive in all communications.
+
+## Acknowledgments
+Every contribution is valuable—whether it is a major feature, a minor fix, or improvements to documentation. We thank everyone who helps improve HiveChain. By contributing, you become part of a community working together to build a powerful platform for AI integration.
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-6'>docs/Commercial License Agreement.md</h2>
+  <pre><code class='language-markdown'># HiveChain Commercial License Agreement
+
+## 1. **Introduction**
+This HiveChain Commercial License Agreement (&quot;Agreement&quot;) governs the use of the HiveChain library and software (&quot;Software&quot;) by businesses and organizations for commercial purposes. By using the Software for commercial purposes, the business (&quot;Licensee&quot;) agrees to the following terms.
+
+## 2. **License Grant**
+(a) HiveChain grants the Licensee a **non-exclusive, non-transferable, revocable license** to use the Software for commercial purposes, subject to the terms of this Agreement.
+(b) This license **does not** grant ownership or any intellectual property rights to the Licensee. All rights remain with HiveChain.
+(c) Licensees are permitted to **modify and use** the Software internally but may not relicense, sell, or distribute it outside their organization without a separate agreement.
+
+## 3. **Commercial Licensing &amp; Pricing**
+(a) Businesses are required to obtain a commercial license to use the Software beyond non-commercial or personal use.
+(b) The initial licensing fee will be set at a reasonable rate, subject to periodic review.
+(c) To ensure fairness and predictability, **price increases for existing license holders will not exceed 20% every 4 years**.
+(d) HiveChain reserves the right to adjust pricing for **new customers** while maintaining grandfathered pricing for existing licensees under the agreed terms.
+
+## 4. **Fair Use &amp; Compliance Verification**
+(a) Businesses claiming non-commercial use may be subject to **HiveChain’s fair use verification** process.
+(b) If HiveChain determines that a Licensee is using the Software commercially without a valid license, they will be required to obtain a commercial license retroactively or cease use.
+(c) In cases where HiveChain incurs **legal or administrative costs** to enforce compliance, the Licensee shall be responsible for covering these costs in addition to the retroactive licensing fees.
+(d) HiveChain provides an **anonymous reporting system** for users, investors, and collaborators to report suspected violations securely.
+(e) Reports will be reviewed based on **community-driven oversight**, ensuring fair and transparent enforcement.
+(f) Businesses found in violation may face **public disclosure of non-compliance**, reinforcing accountability and discouraging unethical practices.(b) If HiveChain determines that a Licensee is using the Software commercially without a valid license, they will be required to obtain a commercial license retroactively or cease use.
+(c) In cases where HiveChain incurs **legal or administrative costs** to enforce compliance, the Licensee shall be responsible for covering these costs in addition to the retroactive licensing fees.
+(d) HiveChain provides an **anonymous reporting system** for users, investors, and collaborators to report suspected violations securely.
+(e) Reports will be reviewed based on **community-driven oversight**, ensuring fair and transparent enforcement.
+(f) Businesses found in violation may face **public disclosure of non-compliance**, reinforcing accountability and discouraging unethical practices.
+(a) Businesses claiming non-commercial use may be subject to **HiveChain’s fair use verification** process.
+(b) If HiveChain determines that a Licensee is using the Software commercially without a valid license, they will be required to obtain a commercial license retroactively or cease use.
+(c) In cases where HiveChain incurs **legal or administrative costs** to enforce compliance, the Licensee shall be responsible for covering these costs in addition to the retroactive licensing fees.
+(d) HiveChain provides an **anonymous reporting system** for users, investors, and collaborators to report suspected violations securely.
+(e) Reports will be reviewed based on **community-driven oversight**, ensuring fair and transparent enforcement.
+(a) Businesses claiming non-commercial use may be subject to **HiveChain’s fair use verification** process.
+(b) If HiveChain determines that a Licensee is using the Software commercially without a valid license, they will be required to obtain a commercial license retroactively or cease use.
+(c) In cases where HiveChain incurs **legal or administrative costs** to enforce compliance, the Licensee shall be responsible for covering these costs in addition to the retroactive licensing fees.
+(a) Businesses claiming non-commercial use may be subject to **HiveChain’s fair use verification** process.
+(b) If HiveChain determines that a Licensee is using the Software commercially without a valid license, they will be required to obtain a commercial license retroactively or cease use.
+
+## 5. **Modifications &amp; Derivative Works**
+(a) Any modifications, improvements, or derivative works created using the Software must remain under **HiveChain’s governance and cannot be relicensed under different terms**.
+(b) Licensees may internally develop enhancements but cannot sell or distribute modified versions of HiveChain without explicit permission.
+
+## 6. **Termination &amp; Revocation**
+(a) HiveChain reserves the right to terminate this license if the Licensee violates any terms of this Agreement.
+(b) Licensees who fail to comply with the licensing requirements may have their license revoked and be subject to legal enforcement.
+
+## 7. **No Warranty &amp; Liability**
+(a) The Software is provided &quot;as is&quot; without warranties of any kind.
+(b) HiveChain is not liable for any damages resulting from the use of the Software.
+
+## 8. **Amendments &amp; Future Changes**
+(a) HiveChain reserves the right to modify this Agreement for new customers, but **existing license holders will continue under the agreed pricing and terms**.
+(b) Changes to licensing policies will be publicly disclosed and documented.
+
+## 9. **Governing Law**
+This Agreement is governed by and construed in accordance with applicable legal jurisdiction where HiveChain operates.
+
+---
+
+By obtaining and using a HiveChain commercial license, the Licensee acknowledges that they have read, understood, and agreed to these terms.
+
+For questions regarding licensing, contact the HiveChain maintainers.
+
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-7'>docs/FAQ.md</h2>
+  <pre><code class='language-markdown'># FAQ
+
+**What is HiveChain?**  
+HiveChain is an early-stage platform that aims to simplify the integration of advanced AI systems (such as large language models and other foundation models) into real-world business applications. It provides a framework for connecting AI models with existing processes and tools, enabling organizations to adopt AI capabilities more seamlessly and effectively.
+
+**What problem does HiveChain solve?**  
+Many companies struggle to incorporate AI into their products or operations due to the complexity of integrating AI models with legacy systems and workflows ([Hive - The Blockchain &amp; Cryptocurrency for Web3](https://hive.io/#:~:text=Hive%20is%20a%20DPoS%20powered,of%20dapps%2C%20communities%20%26%20individuals)). HiveChain addresses this by offering an integration layer that bridges the gap between AI models and business applications. This helps reduce technical barriers and the experimentation time needed to bring AI-driven features to market. By streamlining AI integration, HiveChain allows businesses to focus on leveraging AI insights and automation without reinventing their infrastructure.
+
+**Who is HiveChain for?**  
+HiveChain is designed for AI engineers, developers, and forward-thinking organizations that want to embed AI capabilities into their services or internal processes. If you are building applications that could benefit from natural language understanding, predictive analytics, or other AI-powered functionalities, HiveChain can help you connect those AI models to your application logic in a reliable and scalable way. It is also valuable for researchers and contributors interested in applied AI, as it provides a collaborative platform to experiment with AI integrations.
+
+**What is the current status of the project?**  
+HiveChain is currently in its Minimum Viable Product (MVP) phase. The core functionality is in place, and a basic version of the platform is available for demonstration and initial testing. However, resources are limited and the feature set is focused on proving the core concept. Users can expect the fundamental integration features to work, though some advanced capabilities may still be under development or refinement. We are transparent about our progress and limitations, and we encourage early adopters to provide feedback to help us improve.
+
+**How can I contribute or get involved?**  
+We welcome contributions from developers and AI enthusiasts. If you are interested in contributing to the HiveChain codebase, start by reading the **Getting Started** guide and the **Contributing** guidelines in our documentation. There are opportunities to help with coding, documentation, testing, and providing feedback on the user experience. If you are not a developer, you can still get involved by trying out the platform, reporting issues, or suggesting improvements. For potential collaborators or partners, please reach out to our team to explore how we can work together.
+
+**How is HiveChain different from other AI integration solutions?**  
+HiveChain focuses on being a dedicated integration layer for AI that is both developer-friendly and adaptable to various AI models. Unlike some platforms that offer pre-built AI services, HiveChain is model-agnostic: it can work with different AI APIs or open-source models, giving users the flexibility to choose the AI that best fits their needs. Additionally, HiveChain emphasizes transparency and collaboration. As an open project (with open-source components), it encourages community input and trust. Our goal is to provide a robust yet lightweight solution that complements existing tools rather than replacing them, making AI adoption more incremental and aligned with each organization’s pace ([Westinghouse Unveils Pioneering Nuclear Generative AI System](https://info.westinghousenuclear.com/news/westinghouse-unveils-pioneering-nuclear-generative-ai-system#:~:text=Westinghouse%20Electric%20Company%20launched%20its,to%20deliver%20custom%20GenAI)).
+
+**What is HiveChain’s long-term vision?**  
+In the long term, HiveChain aims to evolve into a comprehensive ecosystem for AI integration. While our current focus is on delivering immediate value through the MVP, we see future potential in expanding HiveChain’s capabilities to support more complex workflows, multiple AI model types, and enterprise-level requirements. We foresee HiveChain helping to establish best practices for integrating AI in ways that align with business goals and ethical standards. Although we have ambitious ideas about shaping how businesses utilize AI, we are approaching this vision step by step. Our priority now is to build a solid foundation and demonstrate real-world usefulness. As we grow and learn from user feedback, we will carefully broaden the platform’s scope while maintaining reliability and trust.
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-8'>docs/Getting_Started.md</h2>
+  <pre><code class='language-markdown'>```markdown
+# Getting Started
+
+This guide will help you set up HiveChain and run a simple example to understand how the platform works. As HiveChain is in an early MVP stage, the setup is straightforward but may require familiarity with basic development tools.
+
+## Prerequisites
+- **Operating System:** HiveChain is cross-platform, but it is primarily tested on modern 64-bit Linux distributions. It should also run on macOS and Windows with minimal adjustments.
+- **Python 3.x Environment:** Ensure you have Python 3.8 or higher installed. Verify your Python version by running `python3 --version` in your terminal.
+- **Dependencies:** HiveChain uses several Python libraries for interfacing with AI models and other services. These are listed in the `requirements.txt` file. An internet connection is required to download these dependencies.
+
+## Installation
+1. **Clone the Repository:**  
+   ```bash
+   git clone https://github.com/YourUsername/HiveChain.git
+   cd HiveChain
+   ```
+2. **Create a Virtual Environment (Optional):**  
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
+3. **Install Dependencies:**  
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **Basic Configuration:**  
+   If HiveChain requires any configuration (for example, API keys for external AI services or paths to model files), copy the provided sample config (e.g., `config.example.yml`) to a new file (e.g., `config.yml`) and update it with your settings.
+5. **Run an Example:**  
+   To verify that everything is set up correctly, run the sample script or demo included in the repository:
+   ```bash
+   python examples/hello_hivechain.py
+   ```
+   Check the console output for confirmation that HiveChain initialized properly and that you received an AI-generated response.
+6. **Explore the Platform:**  
+   Once the example runs successfully, start exploring HiveChain further. Review the `README.md` for an overview of features and usage. The `docs/` directory (if available) contains more detailed explanations of HiveChain’s architecture and how to create custom integration workflows. Keep in mind that, as an early MVP, some features are limited or in-progress. If you encounter any issues or have questions, refer to our documentation or seek help from the community.
+
+## Next Steps
+- **Join the Community:**  
+  Connect with us via our discussion forum or chat channels (links are available on our repository or website). Share your experiences, ask questions, and learn from other HiveChain users and contributors.
+- **Stay Updated:**  
+  As HiveChain is actively evolving, we recommend watching (or “starring”) the GitHub repository to receive notifications about new updates, fixes, and features. Regularly pull the latest changes if you are tracking the main branch.
+- **Contribute:**  
+  If you’re interested in contributing to HiveChain’s development, read the **Contributing** guide. There are many ways to help—from coding new features or connectors to improving documentation and providing feedback on design decisions.
+```</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-9'>docs/High-Level_Roadmap.md</h2>
+  <pre><code class='language-markdown'># High-Level Roadmap
+
+- **MVP Development (Current Stage):**  
+  Our initial focus has been on building the core functionality of HiveChain. In this stage, we have developed a basic prototype that demonstrates how AI models can be connected to simple applications. The goal was to validate the concept with minimal features and gather early feedback. We have kept the scope lean to ensure the foundation is solid before expanding functionality.
+
+- **Alpha Release and Feedback (Next Step):**  
+  Once the MVP is stable, we plan to release an alpha version to a select group of early users and contributors. During this phase, the emphasis will be on testing HiveChain in real-world scenarios, identifying integration challenges, and collecting user feedback. We expect to refine the user experience, fix bugs, and add a few essential features based on the needs of our early adopters.
+
+- **Beta Expansion (Upcoming):**  
+  After incorporating feedback from the alpha phase, we aim to expand HiveChain’s capabilities for a beta release. This phase will likely include support for a broader range of AI models or providers, additional integration connectors (such as databases, APIs, or messaging systems), and improved scalability and security features. We anticipate that during the beta phase, HiveChain can be tested in more production-like environments, though it will still be an early-stage product used with appropriate caution.
+
+- **Community Building and Partnerships:**  
+  In parallel with the technical roadmap, we are actively building a community around HiveChain. This involves creating thorough documentation, establishing governance (including contribution guidelines and a Code of Conduct), and engaging with potential integration partners. We recognize that partnerships with AI service providers or early adopter businesses can greatly enhance HiveChain’s development. Given our resource constraints, we will progress deliberately, focusing on high-impact collaborations that validate our approach.
+
+- **Full Release and Ongoing Improvement:**  
+  Our ultimate goal is to reach a stable 1.0 release of HiveChain, signifying that the platform is robust enough for a wider range of applications. Leading up to this milestone, we will continuously improve the platform—optimizing performance, ensuring robust error handling, and fine-tuning integration workflows. After 1.0, the focus will shift to ongoing enhancements based on user needs and the evolving AI landscape. Potential future enhancements include more automated methods to align AI outputs with business objectives and tools to monitor AI performance in production. These ideas are part of our long-term vision, but we will introduce them carefully, keeping user feedback and reliability as top priorities.
+
+*Note:* This high-level roadmap is subject to change. As an early-stage project, HiveChain will adapt to feedback and practical insights. Timelines are kept flexible to account for our limited team size and the complexity of integrating cutting-edge AI. Our priority is delivering a reliable and useful platform, even if that means adjusting milestones along the way.
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-10'>docs/Long-Term aspirational plan to reward contributions.md</h2>
+  <pre><code class='language-markdown'># Developer Equity Incentive Plan (Draft)
+
+*This document outlines our long-term vision for a developer equity incentive plan. Please note that this plan is a work in progress and is subject to further refinement, legal review, and potential changes as HiveChain evolves.*
+
+## Overview
+
+HiveChain is committed to building an innovative, transparent, and community-aligned organization. As part of our long-term vision, we plan to set aside a **5% equity pool** to reward early contributors—developers, designers, and other key collaborators—who help build and sustain our platform.
+
+## Key Components
+
+### 1. Convertible Notes with Future Token Conversion
+
+- **Initial Instrument:**  
+  Early contributions will be rewarded with convertible notes. These notes grant an equity stake in HiveChain and are designed to pay dividends based on the company’s performance.
+  
+- **Future Conversion to Tokenized Equity:**  
+  At a later stage, once HiveChain has matured and our technical and legal frameworks are fully in place, these notes may be converted into tokenized coins.  
+  *Disclaimer:* Conversion to tokens is not guaranteed; contributors may retain their notes if conversion is not feasible.
+
+### 2. Dividend Payment System
+
+- **Performance-Based Dividends:**  
+  Dividends will be allocated based on the actual performance of the company. This means that dividends will be calculated using a transparent formula:
+  - **Dividends = (Company Revenue - Expenses) × [Pre-Defined Dividend Allocation Percentage]**
+  
+- **Escrow and Withdrawal Mechanism:**  
+  - Dividends will be held in a secure escrow account.
+  - Contributors will receive a unique serial number and private key with their note.
+  - An API and user-friendly GUI will allow contributors to check their dividend balance.
+  - Withdrawals will only be enabled when the accumulated dividend amount exceeds a minimum threshold (to avoid frequent micro-withdrawals).
+
+### 3. Long-Term Vision &amp; Disclaimers
+
+- **Aspirational, Not Immediate:**  
+  This plan is designed as a long-term incentive mechanism. The details of the convertible notes, dividend formulas, and potential token conversion are subject to change as the project develops.
+  
+- **No Immediate Guarantee:**  
+  While our goal is to implement this equity pool to reward early contributors, there is no guarantee that every element (e.g., token conversion) will be executed exactly as described. Changes may occur based on legal, technical, and business considerations.
+  
+- **Commitment to Transparency:**  
+  In keeping with our open-book policy, all financial transactions, including dividend calculations and distributions, will be published publicly (to the extent legally permitted). This ensures that our process remains transparent and aligned with our core values.
+
+## Conclusion
+
+HiveChain’s Developer Equity Incentive Plan represents our commitment to rewarding genuine contributions and aligning the interests of our community with the success of the company. We believe that by building an organization where rewards are based on actual performance—and by maintaining transparency throughout—we can set a new standard for ethical and community-focused innovation.
+
+*This document is a draft and will be updated over time. We welcome feedback from our community to help shape this initiative into a robust, fair, and sustainable incentive model.*
+
+---
+
+*Last Updated: [Insert Date]*
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-11'>docs/Trademark_Statement.md</h2>
+  <pre><code class='language-markdown'># Trademark Statement
+
+&quot;HiveChain&quot; is the trademark (and brand name) associated with our AI integration platform. We ask that our community and the public respect the proper use of this name to avoid confusion and protect the project’s identity and reputation.
+
+**Allowed Uses:**  
+You may use the name &quot;HiveChain&quot; to refer to the project, its open-source software, or the community in articles, tutorials, and discussions. For example, phrases like &quot;built on HiveChain&quot; or &quot;using the HiveChain platform&quot; are acceptable when accurately describing your integration or product in relation to our project.
+
+**Prohibited Uses:**  
+You may not use the &quot;HiveChain&quot; name or logo in a way that suggests official endorsement, sponsorship, or affiliation where none exists. This includes not using &quot;HiveChain&quot; as part of your own product’s name, company name, or domain name if your project is unrelated to the HiveChain platform. Similarly, do not modify or incorporate our logo into your own project branding in a manner that could mislead others into thinking your project is officially connected to us.
+
+We reserve the right to enforce our trademark rights to prevent misuse. These guidelines are not meant to discourage legitimate references to HiveChain, but rather to ensure that &quot;HiveChain&quot; clearly and consistently refers to our project.
+
+If you have any questions about using the HiveChain name or logo, or if you wish to seek permission for a specific use, please contact the HiveChain team.
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-12'>docs/Vision.md</h2>
+  <pre><code class='language-markdown'># Vision
+
+HiveChain’s vision is to make advanced AI technologies accessible and beneficial to a wide range of businesses and developers by focusing on integration and alignment. We believe that the true value of AI emerges when cutting-edge models are effectively integrated into real-world operations, bridging the gap between theoretical potential and practical impact.
+
+**Bridging AI and Real-World Needs:**  
+Today, many powerful AI models exist, but organizations struggle to apply them meaningfully within their existing systems ([doc/devs/create-operation.md - hive - GitLab](https://gitlab.syncad.com/hive/hive/-/blob/bw_serialize_transaction/doc/devs/create-operation.md#:~:text=doc%2Fdevs%2Fcreate,Define%20smt_elevate_account_operation%20structure)). Our platform is built to close this gap. HiveChain acts as the “glue” that connects AI models with the everyday tools and processes businesses rely on. By doing so, we help organizations leverage AI for tasks like automating customer support, analyzing data, or augmenting decision-making—without requiring a complete overhaul of their tech stack.
+
+**Simplicity and Collaboration:**  
+A core principle of our vision is simplicity. We aim to abstract away the complexity of dealing with AI model APIs, data pipelines, and infrastructure, presenting users with a clean and developer-friendly interface. At the same time, HiveChain is built with collaboration in mind. We envision a community where AI engineers, data scientists, and domain experts come together to share integration templates, best practices, and plugins—accelerating innovation for everyone involved ([Hive AI Launch: What&#x27;s Driving the Hype Behind BUZZ - OKX](https://www.okx.com/learn/hive-ai-hype-buzz-token-launch#:~:text=Hive%20AI%20was%20founded%20by,artificial%20intelligence%20in%20decentralized)).
+
+**Ethical AI Alignment:**  
+We recognize that integrating AI is not just a technical challenge but also an ethical one. HiveChain is committed to facilitating AI integrations that are aligned with an organization’s values and policies. This means providing tools (even if basic at first) to help monitor AI outputs, manage biases, and ensure compliance with data privacy standards. As we evolve, we intend to incorporate more features that guide users toward responsible AI usage. While our current capabilities are limited, this commitment to ethical alignment underpins our long-term design philosophy.
+
+**Long-Term Outlook:**  
+In the long run, we see HiveChain playing a role in shaping how businesses adapt to an AI-driven future. By lowering the barriers to AI adoption, we help more organizations benefit from AI advancements, contributing to broader industry transformation. Our future vision includes HiveChain becoming a standard layer in the enterprise tech stack for connecting AI, analogous to how databases or cloud services are standard today. We hint at possibilities such as novel forms of cross-organization AI collaboration, but our present focus remains firmly on delivering a trustworthy and effective product within its current scope. Each step we take is measured against this vision, ensuring that even early features are building blocks toward a more integrated and aligned AI future.
+
+In summary, HiveChain strives to be more than just a tool—it aims to be a catalyst for change in how AI is adopted responsibly. We are starting small, but we are thinking big (with appropriate caution). Every improvement, line of code, and design decision is made with the overarching vision in mind: a world where adopting AI is easier, safer, and yields positive outcomes for businesses and society.
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-13'>docs/index.html</h2>
+  <pre><code class='language-html'>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;HiveChain - Coming Soon&lt;/title&gt;
+    &lt;!-- Google Fonts --&gt;
+    &lt;link
+        href=&quot;https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&amp;display=swap&quot;
+        rel=&quot;stylesheet&quot;
+    /&gt;
+    &lt;!-- Main CSS --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;website/styles.css&quot; /&gt;
+    &lt;style&gt;
+        /* Button to access codebase */
+        .codebase-button {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            padding: 8px 12px;
+            font-size: 12px;
+            background: #222;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            opacity: 0.4;
+            transition: opacity 0.3s;
+        }
+        .codebase-button:hover {
+            opacity: 1;
+        }
+
+        /* Codebase display modal */
+        .codebase-modal {
+            display: none;
+            position: fixed;
+            bottom: 50px;
+            right: 10px;
+            width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #1e1e1e;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            white-space: pre-wrap;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Background Layers --&gt;
+    &lt;div class=&quot;background-image&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;background-overlay&quot;&gt;&lt;/div&gt;
+
+    &lt;!-- Main Content --&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        &lt;h1&gt;HiveChain™&lt;/h1&gt;
+        &lt;p&gt;Rethinking AI Development. Bringing Powerful AI Back to Your Front End.&lt;/p&gt;
+        &lt;p class=&quot;coming-soon&quot;&gt;Coming Soon&lt;/p&gt;
+
+        &lt;!-- New &quot;Why We&#x27;re Different&quot; Link --&gt;
+        &lt;p class=&quot;additional-link&quot;&gt;
+            &lt;a href=&quot;https://github.com/Wagner-HiveChain/hivechain/blob/main/docs/Vision.md&quot; target=&quot;_blank&quot;&gt;
+                Why We&#x27;re Different
+            &lt;/a&gt;
+        &lt;/p&gt;
+
+        &lt;!-- Call to Action --&gt;
+        &lt;div class=&quot;cta&quot;&gt;
+            &lt;a href=&quot;under-construction.html&quot; class=&quot;cta-button&quot;&gt;
+                Contribute on GitHub
+            &lt;/a&gt;
+            &lt;a href=&quot;mailto:wagner@hivechain.dev&quot; class=&quot;cta-button secondary&quot;&gt;
+                Sign Up for Updates
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Codebase Button --&gt;
+    &lt;button class=&quot;codebase-button&quot; onclick=&quot;toggleCodebase()&quot;&gt;Codebase&lt;/button&gt;
+
+    &lt;!-- Codebase Display --&gt;
+    &lt;div id=&quot;codebaseModal&quot; class=&quot;codebase-modal&quot;&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        async function toggleCodebase() {
+            let modal = document.getElementById(&quot;codebaseModal&quot;);
+            if (modal.style.display === &quot;none&quot; || modal.style.display === &quot;&quot;) {
+                modal.style.display = &quot;block&quot;;
+                if (!modal.innerText) {
+                    try {
+                        let response = await fetch(&quot;https://Wagner-HiveChain.github.io/hivechain/docs/combined_code.log&quot;);
+                        if (response.ok) {
+                            modal.innerText = await response.text();
+                        } else {
+                            modal.innerText = &quot;Error: Unable to load codebase.&quot;;
+                        }
+                    } catch (error) {
+                        modal.innerText = &quot;Error: Unable to fetch code.&quot;;
+                    }
+                }
+            } else {
+                modal.style.display = &quot;none&quot;;
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-14'>docs/under-construction.html</h2>
+  <pre><code class='language-html'>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Under Construction | HiveChain&lt;/title&gt;
+  &lt;!-- Link to your external stylesheet --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;website/styles.css&quot;&gt;
+  &lt;style&gt;
+    /* Fallback styling if the external CSS doesn&#x27;t load */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      background-image: url(&#x27;website/background.jpg&#x27;);
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      background: #007BFF;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    a:hover {
+      background: #0056b3;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;Under Construction&lt;/h1&gt;
+    &lt;p&gt;We&#x27;re working hard to build HiveChain—rethinking AI development and putting power back into your hands. Check back soon for updates!&lt;/p&gt;
+    &lt;a href=&quot;mailto:your-email@example.com&quot;&gt;Sign Up for Updates&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-15'>docs/website/styles.css</h2>
+  <pre><code class='language-css'>/* ------------------------------- GLOBAL RESET ------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------- GLOBAL STYLING --------------------------- */
+body {
+    font-family: &quot;JetBrains Mono&quot;, monospace;
+    color: #ffffff;
+    background-color: #000000;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Prevents scrollbars if not needed; remove if scrolling is desired */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --------------------- BACKGROUND &amp; OVERLAY LAYERS --------------------- */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(&quot;background.webp&quot;) center center / cover no-repeat;
+    z-index: -2; /* Behind everything else */
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+    z-index: -1; /* Stays behind the content but above the background image */
+}
+
+/* --------------------------- CONTENT STYLING --------------------------- */
+.content {
+    max-width: 600px; /* Limits the content width for better readability */
+    padding: 0 1rem; /* Small horizontal padding for mobile */
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.coming-soon {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #f8d800; /* Slightly accent color to draw attention */
+}
+
+/* ----------------------- CTA (CALL TO ACTION) ----------------------- */
+.cta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+}
+
+.cta-button {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff5c5c; /* Vibrant color for the main button */
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff7878;
+}
+
+.secondary {
+    background-color: #333333;
+}
+
+.secondary:hover {
+    background-color: #555555;
+}
+
+/* --------------------------- CODEBASE BUTTON &amp; MODAL --------------------------- */
+.codebase-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 12px;
+    background: #444;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.3; /* Low visibility by default */
+    transition: opacity 0.3s;
+}
+
+.codebase-button:hover {
+    opacity: 1; /* Fully visible when hovered */
+}
+
+.codebase-modal {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    width: 340px;
+    max-height: 450px;
+    overflow-y: auto;
+    background: #111; /* Matches dark theme */
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    white-space: pre-wrap; /* Ensures code formatting remains intact */
+    border: 1px solid #444;
+}
+
+/* --------------------------- MEDIA QUERIES --------------------------- */
+
+/* Mobile &amp; Smaller Devices */
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        width: 100%; /* Buttons stack and take full width on narrow screens */
+        text-align: center;
+    }
+
+    .codebase-modal {
+        width: 280px;
+        font-size: 10px;
+    }
+}
+
+/* Larger Screens / Ultra-Wide */
+@media (min-width: 1500px) {
+    .content h1 {
+        font-size: 3rem;
+    }
+    
+    .content p {
+        font-size: 1.25rem;
+    }
+    
+    .cta-button {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+
+    .codebase-modal {
+        width: 400px;
+        font-size: 14px;
+    }
+}
+
+/* ---------------------- ADDITIONAL LINK STYLING ---------------------- */
+.additional-link {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.additional-link a {
+    text-decoration: none;
+    color: #00aaff;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.additional-link a:hover {
+    border-bottom: 1px solid #00aaff;
+}
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-16'>quick tools/concatenate_code.py</h2>
+  <pre><code class='language-python'>#!/usr/bin/env python3
+&quot;&quot;&quot;
+HiveChain Codebase HTML Generator (Hybrid Version)
+
+This script scans the project directory, collects all relevant code files,
+and generates a structured HTML file (`docs/codebase.html`) with proper formatting
+for display on GitHub Pages. It ensures clear separation between files,
+syntax highlighting via Prism.js, and easy navigation.
+&quot;&quot;&quot;
+
+from pathlib import Path
+from html import escape
+from datetime import datetime
+
+# ----------------------------
+# STEP 2: DEFINE DIRECTORIES &amp; SETTINGS
+# ----------------------------
+PROJECT_ROOT = Path(&quot;c:/projects/hivechain&quot;)
+DOCS_DIR = Path(&quot;c:/projects/hivechain/docs&quot;)
+DOCS_DIR.mkdir(exist_ok=True)
+OUTPUT_FILE = DOCS_DIR / &quot;codebase.html&quot;
+
+EXCLUDED_DIRS = {&quot;__pycache__&quot;, &quot;tests&quot;, &quot;migrations&quot;}
+EXCLUDED_FILES = {&quot;.env&quot;}  # Additional exclusions if needed
+VALID_EXTENSIONS = {&quot;.py&quot;, &quot;.json&quot;, &quot;.md&quot;, &quot;.yaml&quot;, &quot;.html&quot;, &quot;.css&quot;}
+
+EXT_TO_PRISM = {
+    &quot;.py&quot;: &quot;language-python&quot;,
+    &quot;.json&quot;: &quot;language-json&quot;,
+    &quot;.md&quot;: &quot;language-markdown&quot;,
+    &quot;.yaml&quot;: &quot;language-yaml&quot;,
+    &quot;.html&quot;: &quot;language-html&quot;,
+    &quot;.css&quot;: &quot;language-css&quot;,
+}
+
+# ----------------------------
+# STEP 3: RECURSIVELY COLLECT RELEVANT FILES
+# ----------------------------
+def collect_files(root_dir: Path):
+    &quot;&quot;&quot;Recursively collect valid files while ignoring excluded directories, files, and output file.&quot;&quot;&quot;
+    hidden_dirs = {&quot;.git&quot;, &quot;.vscode&quot;, &quot;.idea&quot;}  # Common hidden directories to exclude
+    return [
+        f for f in sorted(root_dir.rglob(&quot;*&quot;), key=lambda p: p.as_posix())
+        if f.is_file()
+        and f.suffix.lower() in VALID_EXTENSIONS
+        and f.name not in EXCLUDED_FILES | {OUTPUT_FILE.name}  # Exclude the generated output file
+        and not any(ex_dir in f.parts for ex_dir in EXCLUDED_DIRS | hidden_dirs)
+    ]
+    &quot;&quot;&quot;Recursively collect valid files while ignoring excluded directories and files.&quot;&quot;&quot;
+    hidden_dirs = {&quot;.git&quot;, &quot;.vscode&quot;, &quot;.idea&quot;}  # Common hidden directories to exclude
+    return [
+        f for f in sorted(root_dir.rglob(&quot;*&quot;), key=lambda p: p.as_posix())
+        if f.is_file()
+        and f.suffix.lower() in VALID_EXTENSIONS
+        and f.name not in EXCLUDED_FILES
+        and not any(ex_dir in f.parts for ex_dir in EXCLUDED_DIRS | hidden_dirs)
+    ]
+    &quot;&quot;&quot;Recursively collect valid files while ignoring excluded directories and files.&quot;&quot;&quot;
+    return [
+        f for f in root_dir.rglob(&quot;*&quot;)
+        if f.is_file()
+        and f.suffix.lower() in VALID_EXTENSIONS
+        and f.name not in EXCLUDED_FILES
+        and not any(ex_dir in f.parts for ex_dir in EXCLUDED_DIRS)
+    ]
+
+# ----------------------------
+# STEP 4: PROCESS FILE CONTENTS
+# ----------------------------
+def process_files(file_list):
+    &quot;&quot;&quot;Read and process each file to store its escaped content and syntax class.&quot;&quot;&quot;
+    file_data = []
+    for fpath in file_list:
+        try:
+            content = fpath.read_text(encoding=&quot;utf-8&quot;)
+        except UnicodeDecodeError:
+            print(f&quot;Warning: Unable to read {fpath} due to encoding issues.&quot;)
+            continue
+        except Exception as e:
+            print(f&quot;Warning: Unable to read {fpath}: {e}&quot;)
+            continue
+        
+        file_data.append({
+            &quot;name&quot;: fpath.relative_to(PROJECT_ROOT).as_posix(),
+            &quot;syntax_class&quot;: EXT_TO_PRISM.get(fpath.suffix.lower(), &quot;language-none&quot;),
+            &quot;content&quot;: escape(content),
+        })
+    return file_data
+    &quot;&quot;&quot;Read and escape file contents, map syntax highlighting classes.&quot;&quot;&quot;
+    file_data = []
+    for fpath in file_list:
+        try:
+            content = fpath.read_text(encoding=&quot;utf-8&quot;)
+        except Exception:
+            continue  # Skip unreadable files
+        file_data.append({
+            &quot;name&quot;: fpath.relative_to(PROJECT_ROOT).as_posix(),
+            &quot;syntax_class&quot;: EXT_TO_PRISM.get(fpath.suffix.lower(), &quot;language-none&quot;),
+            &quot;content&quot;: escape(content),
+        })
+    return file_data
+
+# ----------------------------
+# STEP 5: GENERATE HTML FILE
+# ----------------------------
+def generate_html(file_data):
+    &quot;&quot;&quot;Generate structured HTML with TOC, syntax highlighting, and navigation.&quot;&quot;&quot;
+    timestamp = datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)
+    html_parts = [
+        &quot;&lt;!DOCTYPE html&gt;&quot;,
+        &quot;&lt;html lang=&#x27;en&#x27;&gt;&quot;,
+        &quot;&lt;head&gt;&quot;,
+        &quot;  &lt;meta charset=&#x27;UTF-8&#x27;&gt;&quot;,
+        &quot;  &lt;title&gt;HiveChain Codebase&lt;/title&gt;&quot;,
+        &quot;  &lt;link href=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css&#x27; rel=&#x27;stylesheet&#x27; /&gt;&quot;,
+        &quot;  &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js&#x27;&gt;&lt;/script&gt;&quot;,
+        &quot;&lt;/head&gt;&quot;,
+        &quot;&lt;body&gt;&quot;,
+        &quot;  &lt;a id=&#x27;top&#x27;&gt;&lt;/a&gt;&quot;,
+        &quot;  &lt;h1&gt;HiveChain Codebase&lt;/h1&gt;&quot;,
+        f&quot;  &lt;p&gt;Last updated: {timestamp}&lt;/p&gt;&quot;,
+        &quot;  &lt;h2&gt;Table of Contents&lt;/h2&gt;&quot;,
+        &quot;  &lt;ul&gt;&quot;,
+    ]
+    
+    for i, fdata in enumerate(file_data):
+        file_id = f&quot;file-{i}&quot;
+        html_parts.append(f&quot;    &lt;li&gt;&lt;a href=&#x27;#{file_id}&#x27;&gt;{fdata[&#x27;name&#x27;]}&lt;/a&gt;&lt;/li&gt;&quot;)
+    html_parts.append(&quot;  &lt;/ul&gt;&quot;)
+
+    for i, fdata in enumerate(file_data):
+        file_id = f&quot;file-{i}&quot;
+        html_parts.append(&quot;  &lt;hr&gt;&quot;)
+        html_parts.append(f&quot;  &lt;h2 id=&#x27;{file_id}&#x27;&gt;{fdata[&#x27;name&#x27;]}&lt;/h2&gt;&quot;)
+        html_parts.append(f&quot;  &lt;pre&gt;&lt;code class=&#x27;{fdata[&#x27;syntax_class&#x27;]}&#x27;&gt;{fdata[&#x27;content&#x27;]}&lt;/code&gt;&lt;/pre&gt;&quot;)
+        html_parts.append(&quot;  &lt;p&gt;&lt;a href=&#x27;#top&#x27;&gt;Back to Top&lt;/a&gt;&lt;/p&gt;&quot;)
+    
+    html_parts.append(&quot;&lt;/body&gt;&quot;)
+    html_parts.append(&quot;&lt;/html&gt;&quot;)
+    return &quot;\n&quot;.join(html_parts)
+
+# ----------------------------
+# STEP 6: WRITE OUTPUT FILE
+# ----------------------------
+def write_output(html_result):
+    &quot;&quot;&quot;Write the generated HTML to docs/codebase.html.&quot;&quot;&quot;
+    OUTPUT_FILE.write_text(html_result, encoding=&quot;utf-8&quot;)
+
+# ----------------------------
+# STEP 7: PRINT SUCCESS MESSAGE
+# ----------------------------
+def main():
+    print(&quot;Collecting files...&quot;)
+    files = collect_files(PROJECT_ROOT)
+    print(&quot;Processing files...&quot;)
+    processed_data = process_files(files)
+    print(&quot;Generating HTML content...&quot;)
+    html_result = generate_html(processed_data)
+    print(&quot;Writing to output file...&quot;)
+    write_output(html_result)
+    print(f&quot;Success! Codebase HTML generated at: {OUTPUT_FILE}&quot;)
+    print(&quot;Preview of generated HTML:&quot;)
+    print(&quot;-&quot; * 50)
+    print(html_result[:500])  # Print first 500 characters for preview
+    print(&quot;-&quot; * 50)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-17'>run.py</h2>
+  <pre><code class='language-python'>#!/usr/bin/env python3
+# run.py
+&quot;&quot;&quot;
+Module: run.py
+Responsibility:
+  - Provide an interactive CLI that uses the complete HiveChain pipeline.
+  - Force the use of the GPT-4o mini model.
+  - Handle user conversation, exit gracefully, and print the standardized output with HiveChain metadata.
+&quot;&quot;&quot;
+
+import sys
+from hivechain.config_handler import load_config
+from hivechain.hivechain_core import init_config
+from hivechain.pipeline import process_request
+
+def main():
+    # Load configuration and initialize the library.
+    config = load_config()
+    init_config(config)
+    
+    # Force using the GPT-4o mini model.
+    model = &quot;gpt-4o-mini&quot;
+    
+    print(&quot;Welcome to the HiveChain GPT-4o Mini CLI!&quot;)
+    print(&quot;Type your message and press Enter. Type &#x27;exit&#x27; or &#x27;quit&#x27; to end the conversation.\n&quot;)
+    
+    while True:
+        try:
+            prompt = input(&quot;You: &quot;)
+            if prompt.strip().lower() in [&quot;exit&quot;, &quot;quit&quot;]:
+                print(&quot;Exiting conversation.&quot;)
+                break
+            
+            # Process the request through the full pipeline with metadata wrapping enabled.
+            response = process_request(raw_input=prompt, model_name=model, wrap_response=True)
+            
+            # Print the standardized output (assuming &quot;result&quot; holds the generated text).
+            print(&quot;GPT-4o Mini:&quot;, response.get(&quot;result&quot;, &quot;&quot;), &quot;\n&quot;)
+            if response.get(&quot;fallback_used&quot;, False):
+                print(&quot;Warning: Fallback formatting was applied to the input.\n&quot;)
+        except KeyboardInterrupt:
+            print(&quot;\nConversation interrupted. Goodbye!&quot;)
+            sys.exit(0)
+        except Exception as e:
+            print(&quot;Error:&quot;, e, file=sys.stderr)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-18'>setup.py</h2>
+  <pre><code class='language-python'>from setuptools import setup, find_packages
+import os
+
+# Read the long description from README.md if available
+this_directory = os.path.abspath(os.path.dirname(__file__))
+with open(os.path.join(this_directory, &quot;README.md&quot;), encoding=&quot;utf-8&quot;) as fh:
+    long_description = fh.read()
+
+setup(
+    name=&quot;hivechain&quot;,
+    version=&quot;0.1.0&quot;,
+    author=&quot;Laura Wagner&quot;,
+    author_email=&quot;wagner@hivechain.dev&quot;, 
+    description=&quot;HiveChain: A Modular AI Orchestration Framework for Transparent and easy to use.&quot;,
+    long_description=long_description,
+    long_description_content_type=&quot;text/markdown&quot;,
+    url=&quot;https://www.hivechain.dev&quot;,
+    # This will include all packages under src, including hivechain and its submodules (e.g., provider_adapters)
+    packages=find_packages(where=&quot;src&quot;),
+    package_dir={&quot;&quot;: &quot;src&quot;},
+    classifiers=[
+        &quot;Programming Language :: Python :: 3&quot;,
+        &quot;Operating System :: OS Independent&quot;,
+        &quot;Topic :: Software Development :: Libraries&quot;,
+        &quot;Topic :: Scientific/Engineering :: Artificial Intelligence&quot;,
+    ],
+    python_requires=&quot;&gt;=3.7&quot;,
+    install_requires=[
+        &quot;openai&quot;,
+        &quot;python-dotenv&quot;,
+    ],
+    entry_points={
+        &quot;console_scripts&quot;: [
+            &quot;hivechain-run=hivechain.cli:main&quot;,
+        ]
+    },
+)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-19'>src/hivechain/__init__.py</h2>
+  <pre><code class='language-python'></code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-20'>src/hivechain/agent_manager.py</h2>
+  <pre><code class='language-python'># agent_manager.py
+&quot;&quot;&quot;
+Module: agent_manager.py
+Description:
+  Manages smart agents and multi-agent workflows.
+  Defines a base Agent interface (e.g., Agent.generate(prompt, context)) and a stub implementation.
+  Also provides an AgentManager to register agents and delegate tasks.
+  
+Key Tasks:
+  - Define an Agent interface with an abstract method generate(prompt, context).
+  - Provide a SimpleAgent as a stub implementation.
+  - Implement an AgentManager to manage multiple agents and aggregate their responses.
+  
+Keywords: agents, multi-agent, coordination, plugin.
+
+#Placeholder: Extend to support orchestration of multiple agents, task delegation strategies, and result aggregation.
+&quot;&quot;&quot;
+
+from abc import ABC, abstractmethod
+
+class Agent(ABC):
+    &quot;&quot;&quot;
+    Abstract base class for agents.
+    Each agent should implement the generate method to produce a response given a prompt and optional context.
+    &quot;&quot;&quot;
+    @abstractmethod
+    def generate(self, prompt: str, context: dict = None) -&gt; str:
+        &quot;&quot;&quot;
+        Generate a response based on the provided prompt and optional context.
+        
+        Args:
+            prompt (str): The input prompt for the agent.
+            context (dict, optional): Additional context or memory for the agent.
+        
+        Returns:
+            str: The generated response.
+        &quot;&quot;&quot;
+        pass
+
+class SimpleAgent(Agent):
+    &quot;&quot;&quot;
+    A simple stub agent implementation.
+    Returns a placeholder response indicating that the agent received the prompt.
+    
+    #Placeholder: Replace this stub with actual agent logic.
+    &quot;&quot;&quot;
+    def generate(self, prompt: str, context: dict = None) -&gt; str:
+        return f&quot;[Placeholder Response] Received prompt: {prompt}&quot;
+
+class AgentManager:
+    &quot;&quot;&quot;
+    Manages multiple agents and orchestrates multi-agent workflows.
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.agents = []  # List to store registered agents.
+    
+    def register_agent(self, agent: Agent):
+        &quot;&quot;&quot;
+        Registers an agent with the manager.
+        
+        Args:
+            agent (Agent): An instance of a subclass of Agent.
+        &quot;&quot;&quot;
+        self.agents.append(agent)
+    
+    def delegate_task(self, prompt: str, context: dict = None) -&gt; dict:
+        &quot;&quot;&quot;
+        Delegates a task to all registered agents and aggregates their responses.
+        
+        Args:
+            prompt (str): The task prompt.
+            context (dict, optional): Additional context to pass to each agent.
+        
+        Returns:
+            dict: A dictionary mapping agent identifiers (e.g., &quot;agent_0&quot;) to their generated responses.
+        
+        #Placeholder: Enhance with logic for selecting a subset of agents, parallel execution, or more advanced aggregation.
+        &quot;&quot;&quot;
+        responses = {}
+        for idx, agent in enumerate(self.agents):
+            responses[f&quot;agent_{idx}&quot;] = agent.generate(prompt, context)
+        return responses
+
+# For local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     agent_manager = AgentManager()
+#     agent_manager.register_agent(SimpleAgent())
+#     agent_manager.register_agent(SimpleAgent())
+#     result = agent_manager.delegate_task(&quot;What is the weather today?&quot;, {&quot;location&quot;: &quot;San Francisco&quot;})
+#     print(&quot;Agent responses:&quot;, result)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-21'>src/hivechain/api_caller.py</h2>
+  <pre><code class='language-python'># api_caller.py
+&quot;&quot;&quot;
+Module: api_caller.py
+Responsibility:
+  - Abstract the API call logic so that the rest of the pipeline remains agnostic
+    to the underlying API details.
+  - Retrieve model configuration from the global configuration.
+  - Securely set up API keys and endpoints based on the model type.
+  - Clamp parameters (e.g., temperature, max_tokens) using configuration limits.
+  - Delegate the API call to the appropriate provider adapter.
+  
+TODO:
+  - Enhance error handling and support for additional model types as needed. #Placeholder
+  - Adapt the API call to any future changes in the underlying API interface. #Placeholder
+&quot;&quot;&quot;
+
+import os
+from hivechain.hivechain_core import get_config
+
+def call_api(structured_prompt: dict, model_name: str, temperature: float = None, max_tokens: int = None) -&gt; dict:
+    &quot;&quot;&quot;
+    Given a structured prompt and model configuration, delegate the API call to the appropriate provider adapter.
+    
+    Args:
+        structured_prompt (dict): The dictionary with at least a &quot;prompt&quot; key.
+        model_name (str): The name of the model to use (must be present in the configuration under the default provider).
+        temperature (float, optional): Override the default temperature.
+        max_tokens (int, optional): Override the default max tokens.
+        
+    Returns:
+        dict: The raw API response as returned by the provider adapter.
+    &quot;&quot;&quot;
+    # Retrieve the global configuration.
+    config = get_config()
+    
+    # Determine the default provider (e.g., &quot;openai&quot;) from the configuration.
+    provider_name = config.get(&quot;default_provider&quot;, &quot;openai&quot;)
+    provider_cfg = config[&quot;providers&quot;].get(provider_name)
+    if provider_cfg is None:
+        raise ValueError(f&quot;Provider &#x27;{provider_name}&#x27; is not configured in the configuration.&quot;)
+    
+    # Retrieve the model configuration from the provider&#x27;s models.
+    model_cfg = provider_cfg[&quot;models&quot;].get(model_name)
+    if model_cfg is None:
+        raise ValueError(f&quot;Model &#x27;{model_name}&#x27; is not defined under provider &#x27;{provider_name}&#x27;.&quot;)
+    
+    # Set temperature and max_tokens using defaults if not provided.
+    temperature = temperature if temperature is not None else model_cfg.get(&quot;default_temperature&quot;, 0.7)
+    max_tokens  = max_tokens if max_tokens is not None else model_cfg.get(&quot;default_max_tokens&quot;, 1000)
+    
+    # Validate and clamp parameters using the limits defined in the configuration.
+    limits = config.get(&quot;parameter_limits&quot;, {})
+    if &quot;temperature&quot; in limits:
+        minT = limits[&quot;temperature&quot;].get(&quot;min&quot;, 0.0)
+        maxT = limits[&quot;temperature&quot;].get(&quot;max&quot;, 1.0)
+        if temperature &lt; minT or temperature &gt; maxT:
+            print(f&quot;Clamping temperature to [{minT}, {maxT}]&quot;)
+            temperature = max(min(temperature, maxT), minT)
+    if &quot;max_tokens&quot; in limits:
+        minN = limits[&quot;max_tokens&quot;].get(&quot;min&quot;, 1)
+        maxN = limits[&quot;max_tokens&quot;].get(&quot;max&quot;, 2048)
+        if max_tokens &lt; minN or max_tokens &gt; maxN:
+            print(f&quot;Clamping max_tokens to [{minN}, {maxN}]&quot;)
+            max_tokens = max(min(max_tokens, maxN), minN)
+    
+    # Set up API keys and endpoints based on provider type.
+    if model_cfg[&quot;type&quot;] == &quot;openai&quot;:
+        import openai
+        openai.api_key = os.getenv(&quot;OPENAI_API_KEY&quot;)
+        openai.api_base = &quot;https://api.openai.com/v1&quot;
+    elif model_cfg[&quot;type&quot;] == &quot;deepseek&quot;:
+        import openai
+        openai.api_key = os.getenv(&quot;DEEPSEEK_API_KEY&quot;)
+        openai.api_base = model_cfg.get(&quot;api_base&quot;, &quot;https://api.deepseek.com&quot;)
+    else:
+        raise NotImplementedError(f&quot;Model type &#x27;{model_cfg[&#x27;type&#x27;]}&#x27; is not supported in the adapter layer.&quot;)
+    
+    # Build the request payload.
+    # Assumes structured_prompt contains a key &quot;prompt&quot; with the text.
+    messages = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: structured_prompt[&quot;prompt&quot;]}]
+    
+    # Delegate the API call to the appropriate provider adapter.
+    # For this version, we assume the default provider is &quot;openai&quot; or &quot;deepseek&quot;.
+    if model_cfg[&quot;type&quot;] == &quot;openai&quot;:
+        from hivechain.provider_adapters.openai_provider import generate_text as provider_generate
+    elif model_cfg[&quot;type&quot;] == &quot;deepseek&quot;:
+        from hivechain.provider_adapters.deepseek_provider import generate_text as provider_generate
+    else:
+        raise NotImplementedError(f&quot;Provider adapter for model type &#x27;{model_cfg[&#x27;type&#x27;]}&#x27; is not implemented.&quot;)
+    
+    response = provider_generate(structured_prompt[&quot;prompt&quot;], {
+        &quot;engine&quot;: model_cfg[&quot;engine&quot;],
+        &quot;temperature&quot;: temperature,
+        &quot;max_tokens&quot;: max_tokens,
+        **({&quot;api_base&quot;: model_cfg.get(&quot;api_base&quot;)} if model_cfg[&quot;type&quot;] == &quot;deepseek&quot; else {})
+    })
+    
+    # Placeholder: Additional error handling can be added here if needed. #Placeholder
+    
+    return response
+
+# For local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     # Simulate a structured prompt from the input formatter.
+#     test_prompt = {&quot;prompt&quot;: &quot;Tell me a joke about programming.&quot;, &quot;fallback&quot;: False, &quot;details&quot;: &quot;Standard formatting applied.&quot;}
+#     try:
+#         result = call_api(test_prompt, model_name=&quot;gpt-4o-mini&quot;)
+#         print(result)
+#     except Exception as e:
+#         print(&quot;Error during API call:&quot;, e)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-22'>src/hivechain/cli.py</h2>
+  <pre><code class='language-python'># cli.py
+&quot;&quot;&quot;
+Module: cli.py
+Responsibility:
+  - Provide a command-line interface (CLI) for interacting with the HiveChain pipeline.
+  - Load configuration, initialize the library, parse user input, call the pipeline,
+    and display the final output.
+  - This CLI leverages the new modular pipeline approach and allows toggling metadata wrapping.
+&quot;&quot;&quot;
+
+import argparse
+from .config_handler import load_config
+from .hivechain_core import init_config
+from .pipeline import process_request
+
+def main():
+    # Load configuration (from config.json, .env, etc.)
+    config = load_config()
+    # Initialize the library&#x27;s configuration (immutable by default)
+    init_config(config)
+    
+    parser = argparse.ArgumentParser(description=&quot;HiveChain AI Conversation CLI&quot;)
+    parser.add_argument(&quot;prompt&quot;, type=str, help=&quot;User prompt for the AI model&quot;)
+    parser.add_argument(&quot;--model&quot;, choices=config[&quot;models&quot;].keys(),
+                        help=&quot;Which model to use (as defined in config.json; defaults to config&#x27;s default)&quot;)
+    parser.add_argument(&quot;--temperature&quot;, type=float, help=&quot;Temperature for generation&quot;)
+    parser.add_argument(&quot;--max-tokens&quot;, type=int, dest=&quot;max_tokens&quot;, help=&quot;Max tokens for the response&quot;)
+    parser.add_argument(&quot;--no-wrap&quot;, action=&quot;store_true&quot;,
+                        help=&quot;Return raw API response without HiveChain metadata (default wraps response)&quot;)
+    args = parser.parse_args()
+
+    try:
+        # Determine wrap_response: if --no-wrap is provided, disable metadata wrapping.
+        wrap_response = not args.no_wrap
+        
+        # Process the request through the complete pipeline.
+        response = process_request(
+            raw_input=args.prompt,
+            model_name=args.model,
+            temperature=args.temperature,
+            max_tokens=args.max_tokens,
+            wrap_response=wrap_response
+        )
+        
+        # If the response is wrapped (a dict with a &quot;result&quot; key), print the result and any metadata.
+        if isinstance(response, dict) and &quot;result&quot; in response:
+            model_used = args.model if args.model else config.get(&quot;default_model&quot;, &quot;openai&quot;)
+            print(f&quot;{model_used} response:\n{response.get(&#x27;result&#x27;, &#x27;&#x27;)}\n&quot;)
+            if response.get(&quot;fallback_used&quot;, False):
+                print(&quot;Warning: Fallback formatting was applied to the input.&quot;)
+        else:
+            # Otherwise, assume it&#x27;s the raw API response and print it directly.
+            print(response)
+    except Exception as e:
+        print(f&quot;Error: {e}&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-23'>src/hivechain/config_handler.py</h2>
+  <pre><code class='language-python'># config_handler.py
+import json
+import os
+from dotenv import load_dotenv
+
+def load_config(config_path=&quot;config.json&quot;):
+    &quot;&quot;&quot;Load configuration from a JSON file and environment variables.&quot;&quot;&quot;
+    load_dotenv()  # Load environment variables from .env file
+    try:
+        with open(config_path, &quot;r&quot;) as f:
+            config = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        raise RuntimeError(&quot;Error loading configuration file.&quot;)
+
+    # Inject API keys from environment variables
+    for model_name, model_data in config.get(&quot;models&quot;, {}).items():
+        env_key = f&quot;{model_name.upper()}_API_KEY&quot;
+        model_data[&quot;api_key&quot;] = os.getenv(env_key, &quot;&quot;)
+    
+    return config
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-24'>src/hivechain/config_validator.py</h2>
+  <pre><code class='language-python'># config_validator.py
+&quot;&quot;&quot;
+Module: config_validator.py
+Description:
+  Validate the structure and contents of config.json at startup.
+  Checks for required keys and proper types, providing clear error messages if any
+  requirements are not met.
+  
+#Placeholder: Consider integrating JSON Schema validation in the future for more robust checks.
+&quot;&quot;&quot;
+
+def validate_config(config: dict) -&gt; bool:
+    &quot;&quot;&quot;
+    Validates the configuration dictionary.
+    
+    Args:
+        config (dict): The configuration dictionary loaded from config.json.
+    
+    Returns:
+        bool: True if the configuration is valid.
+    
+    Raises:
+        ValueError: If any required key is missing or has an incorrect type.
+    &quot;&quot;&quot;
+    # Check for required top-level keys.
+    required_top_keys = [&quot;default_provider&quot;, &quot;providers&quot;, &quot;parameter_limits&quot;, &quot;features&quot;]
+    for key in required_top_keys:
+        if key not in config:
+            raise ValueError(f&quot;Missing top-level key: &#x27;{key}&#x27; in configuration.&quot;)
+
+    # Validate default_provider is a string.
+    if not isinstance(config[&quot;default_provider&quot;], str):
+        raise ValueError(&quot;The &#x27;default_provider&#x27; should be a string.&quot;)
+
+    # Validate that providers is a dictionary.
+    providers = config[&quot;providers&quot;]
+    if not isinstance(providers, dict):
+        raise ValueError(&quot;The &#x27;providers&#x27; key should be an object (dict).&quot;)
+
+    # Check each provider.
+    for provider_name, provider_conf in providers.items():
+        if not isinstance(provider_conf, dict):
+            raise ValueError(f&quot;Provider &#x27;{provider_name}&#x27; should be a dict.&quot;)
+        if &quot;api_key_env&quot; not in provider_conf:
+            raise ValueError(f&quot;Provider &#x27;{provider_name}&#x27; missing &#x27;api_key_env&#x27;.&quot;)
+        if &quot;models&quot; not in provider_conf:
+            raise ValueError(f&quot;Provider &#x27;{provider_name}&#x27; missing &#x27;models&#x27; key.&quot;)
+        models = provider_conf[&quot;models&quot;]
+        if not isinstance(models, dict):
+            raise ValueError(f&quot;&#x27;models&#x27; under provider &#x27;{provider_name}&#x27; should be a dict.&quot;)
+        for model_name, model_conf in models.items():
+            # Check required keys for each model.
+            required_model_keys = [&quot;engine&quot;, &quot;type&quot;, &quot;default_temperature&quot;, &quot;max_token_input&quot;, &quot;max_token_output&quot;, &quot;per_token&quot;]
+            for key in required_model_keys:
+                if key not in model_conf:
+                    raise ValueError(f&quot;Model &#x27;{model_name}&#x27; under provider &#x27;{provider_name}&#x27; is missing key: &#x27;{key}&#x27;.&quot;)
+            # Validate that per_token is a dictionary.
+            per_token = model_conf[&quot;per_token&quot;]
+            if not isinstance(per_token, dict):
+                raise ValueError(f&quot;&#x27;per_token&#x27; for model &#x27;{model_name}&#x27; under provider &#x27;{provider_name}&#x27; should be a dict.&quot;)
+            for token_key in [&quot;input&quot;, &quot;cached_input&quot;, &quot;output&quot;]:
+                if token_key not in per_token:
+                    raise ValueError(f&quot;&#x27;per_token&#x27; for model &#x27;{model_name}&#x27; missing key &#x27;{token_key}&#x27;.&quot;)
+
+    # Validate parameter_limits.
+    parameter_limits = config[&quot;parameter_limits&quot;]
+    if not isinstance(parameter_limits, dict):
+        raise ValueError(&quot;&#x27;parameter_limits&#x27; should be a dict.&quot;)
+    for param in [&quot;temperature&quot;, &quot;max_tokens&quot;]:
+        if param not in parameter_limits:
+            raise ValueError(f&quot;Missing &#x27;{param}&#x27; in &#x27;parameter_limits&#x27;.&quot;)
+        limits = parameter_limits[param]
+        if not isinstance(limits, dict):
+            raise ValueError(f&quot;&#x27;{param}&#x27; in &#x27;parameter_limits&#x27; should be a dict.&quot;)
+        for bound in [&quot;min&quot;, &quot;max&quot;]:
+            if bound not in limits:
+                raise ValueError(f&quot;&#x27;{param}&#x27; in &#x27;parameter_limits&#x27; is missing &#x27;{bound}&#x27;.&quot;)
+
+    # Validate features.
+    features = config[&quot;features&quot;]
+    if not isinstance(features, dict):
+        raise ValueError(&quot;&#x27;features&#x27; should be a dict.&quot;)
+    for feature in [&quot;use_memory&quot;, &quot;use_retrieval&quot;]:
+        if feature not in features:
+            raise ValueError(f&quot;Missing feature flag: &#x27;{feature}&#x27; in &#x27;features&#x27;.&quot;)
+
+    return True
+
+# For local testing: Run this module directly to validate config.json.
+if __name__ == &quot;__main__&quot;:
+    import json
+    try:
+        with open(&quot;config.json&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+            config_data = json.load(f)
+        if validate_config(config_data):
+            print(&quot;Configuration is valid.&quot;)
+    except Exception as e:
+        print(&quot;Configuration validation error:&quot;, e)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-25'>src/hivechain/fallback_formatter.py</h2>
+  <pre><code class='language-python'># fallback_formatter.py
+&quot;&quot;&quot;
+Module: fallback_formatter.py
+Responsibility:
+  - When raw input fails validation, this module uses a fallback formatting agent 
+    (e.g., a cost-effective model like GPT-4o mini) to reformat and sanitize the input.
+  - It inserts placeholder tags (e.g., {sanitized:object.type}) where necessary and 
+    produces a structured prompt that the downstream API caller can handle.
+  - In this stub, we simulate the fallback behavior. In a complete implementation, the
+    function would call the formatting agent and process its output.
+&quot;&quot;&quot;
+
+def sanitize_input(raw_input: str) -&gt; dict:
+    &quot;&quot;&quot;
+    Processes raw input using a fallback mechanism to generate a structured prompt.
+    
+    Args:
+        raw_input (str): The raw user input that failed validation.
+        
+    Returns:
+        dict: A dictionary with the following keys:
+            - &quot;prompt&quot;: The sanitized and formatted prompt ready for the API caller.
+            - &quot;fallback&quot;: A boolean flag indicating that fallback formatting was applied.
+            - &quot;details&quot;: (Optional) Additional details on what was sanitized or any tags inserted.
+    
+    TODO:
+        - Integrate an API call to a cost-effective model (e.g., GPT-4o mini) to perform the formatting.
+        - Insert tags or annotations (e.g., {sanitized:object.type}) where parts of the input are unclear or redacted.
+        - Handle potential errors from the formatting agent and provide informative messages.
+    &quot;&quot;&quot;
+    # For now, we simulate fallback formatting by simply stripping the input and appending a note.
+    sanitized_prompt = raw_input.strip()
+    
+    # Placeholder for API call to formatting agent:
+    # response = call_formatting_agent(raw_input)  # #Placeholder: integrate actual agent call
+    # sanitized_prompt = response.get(&quot;formatted_prompt&quot;, sanitized_prompt)
+    # details = response.get(&quot;details&quot;, &quot;Fallback formatting applied; details not available.&quot;)  # #Placeholder
+    
+    # For this stub, we simply append a note indicating fallback was used.
+    sanitized_prompt += &quot;\n\n[Note: Fallback formatting applied. Some content may have been sanitized.]&quot;
+    
+    return {
+        &quot;prompt&quot;: sanitized_prompt,
+        &quot;fallback&quot;: True,
+        &quot;details&quot;: &quot;Fallback formatting applied. Replace with agent response when implemented. #Placeholder&quot;
+    }
+
+# For quick local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     test_input = &quot;raw, messy input that does not conform to schema...&quot;
+#     result = sanitize_input(test_input)
+#     print(result)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-26'>src/hivechain/hivechain_core.py</h2>
+  <pre><code class='language-python'># hivechain_core.py
+&quot;&quot;&quot;
+Module: hivechain_core.py
+Description:
+  Manages the global configuration and shared state for HiveChain.
+  By default, the configuration is made immutable to ensure consistency and avoid accidental modifications.
+  However, an optional parameter allows disabling immutability if dynamic updates are required.
+  
+Keywords: singleton, global state, initialization, immutable.
+&quot;&quot;&quot;
+
+from types import MappingProxyType
+
+_config = None
+
+def init_config(config: dict, immutable: bool = True):
+    &quot;&quot;&quot;
+    Initialize the library&#x27;s configuration.
+    Must be called once by the application before using other library functions.
+    
+    Args:
+        config (dict): The configuration dictionary to be set as the global configuration.
+        immutable (bool, optional): If True (default), the configuration will be made immutable.
+                                    Set to False to allow modifications at runtime.
+    &quot;&quot;&quot;
+    global _config
+    if immutable:
+        _config = MappingProxyType(config)
+    else:
+        _config = config
+
+def get_config():
+    &quot;&quot;&quot;
+    Retrieve the current configuration.
+    
+    Returns:
+        dict: The global configuration.
+    
+    Raises:
+        RuntimeError: If the configuration has not been initialized.
+    &quot;&quot;&quot;
+    if _config is None:
+        raise RuntimeError(&quot;Configuration not initialized. Please call init_config() first.&quot;)
+    return _config
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-27'>src/hivechain/input_formatter.py</h2>
+  <pre><code class='language-python'># input_formatter.py
+&quot;&quot;&quot;
+Module: input_formatter.py
+Responsibility:
+  - Process raw user input and return a structured prompt.
+  - Validate input against expected criteria.
+  - Mark the input as valid or not, so the pipeline can decide whether to trigger fallback formatting.
+&quot;&quot;&quot;
+
+def format_input(raw_input: str) -&gt; dict:
+    &quot;&quot;&quot;
+    Processes the raw input into a structured prompt.
+    
+    Args:
+        raw_input (str): The raw user input.
+        
+    Returns:
+        dict: A dictionary containing:
+            - &quot;prompt&quot;: the processed text.
+            - &quot;valid&quot;: a boolean flag indicating whether the input fits our expected schema.
+    
+    Current simple rule:
+      - If the stripped input has fewer than 10 characters, it is considered not valid.
+      
+    #Placeholder: Add more complex validation logic (e.g., regex checks, JSON schema validation) as needed.
+    &quot;&quot;&quot;
+    cleaned_input = raw_input.strip()
+    # Simple rule: inputs shorter than 10 characters are flagged as not valid.
+    if len(cleaned_input) &lt; 10:
+        return {&quot;prompt&quot;: cleaned_input, &quot;valid&quot;: False}
+    
+    # Otherwise, consider it valid.
+    return {&quot;prompt&quot;: cleaned_input, &quot;valid&quot;: True}
+
+# For testing purposes, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     test_input = &quot;Hello&quot;
+#     print(format_input(test_input))
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-28'>src/hivechain/memory_manager.py</h2>
+  <pre><code class='language-python'># memory_manager.py
+&quot;&quot;&quot;
+Module: memory_manager.py
+Description:
+  Manages conversation memory for multi-turn interactions using a simple rolling window.
+  For now, this implementation is list-based and maintains a history of conversation messages.
+  If the total token count exceeds a defined maximum, older messages are removed.
+  
+Key Tasks:
+  - Append messages to memory.
+  - Return the conversation history.
+  - Enforce a maximum token count (using a placeholder token counting method).
+  
+#Placeholder: Replace the simple whitespace-based token count with a more accurate tokenizer.
+#Placeholder: In the future, swap this implementation with a vector store or a persistent memory solution.
+&quot;&quot;&quot;
+
+class MemoryManager:
+    def __init__(self, max_tokens: int = 2048):
+        &quot;&quot;&quot;
+        Initializes the MemoryManager with a maximum token limit.
+        
+        Args:
+            max_tokens (int): The maximum total token count for the conversation memory.
+        &quot;&quot;&quot;
+        self.max_tokens = max_tokens
+        self.memory = []  # List of messages, each a dict with keys &#x27;role&#x27; and &#x27;content&#x27;.
+    
+    def _count_tokens(self, text: str) -&gt; int:
+        &quot;&quot;&quot;
+        Counts tokens in a given text using a simple whitespace split.
+        #Placeholder: Replace with a proper tokenization method.
+        
+        Args:
+            text (str): The text to count tokens from.
+            
+        Returns:
+            int: The number of tokens.
+        &quot;&quot;&quot;
+        return len(text.split())
+    
+    def add_message(self, role: str, content: str):
+        &quot;&quot;&quot;
+        Adds a message to the conversation memory. If the total token count exceeds max_tokens,
+        older messages are removed until the total is within the limit.
+        
+        Args:
+            role (str): The role of the message sender (e.g., &#x27;user&#x27;, &#x27;assistant&#x27;).
+            content (str): The content of the message.
+        &quot;&quot;&quot;
+        new_message = {&quot;role&quot;: role, &quot;content&quot;: content}
+        self.memory.append(new_message)
+        
+        # Enforce the maximum token limit.
+        total_tokens = sum(self._count_tokens(msg[&quot;content&quot;]) for msg in self.memory)
+        while total_tokens &gt; self.max_tokens and self.memory:
+            removed = self.memory.pop(0)
+            total_tokens = sum(self._count_tokens(msg[&quot;content&quot;]) for msg in self.memory)
+    
+    def get_memory(self) -&gt; list:
+        &quot;&quot;&quot;
+        Returns the current conversation history.
+        
+        Returns:
+            list: A copy of the conversation memory.
+        &quot;&quot;&quot;
+        return self.memory.copy()
+    
+    def reset_memory(self):
+        &quot;&quot;&quot;
+        Clears the entire conversation memory.
+        &quot;&quot;&quot;
+        self.memory.clear()
+
+# Singleton instance for easy use across the application.
+memory_manager = MemoryManager()
+
+# For local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     memory_manager.add_message(&quot;user&quot;, &quot;Hello, how are you?&quot;)
+#     memory_manager.add_message(&quot;assistant&quot;, &quot;I&#x27;m good, thank you!&quot;)
+#     print(&quot;Current Memory:&quot;, memory_manager.get_memory())
+#     memory_manager.reset_memory()
+#     print(&quot;Memory after reset:&quot;, memory_manager.get_memory())
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-29'>src/hivechain/output_formatter.py</h2>
+  <pre><code class='language-python'># output_formatter.py
+&quot;&quot;&quot;
+Module: output_formatter.py
+Responsibility:
+  - Transform the raw API response (e.g., from openai.ChatCompletion.create) into a standardized output.
+  - Extract key pieces of information such as the generated text.
+  - Include metadata (e.g., whether fallback formatting was used) if applicable.
+  
+TODO:
+  - Enhance error handling as needed for different API response formats.
+  - Optionally add more detailed logging or extraction of additional metadata.
+&quot;&quot;&quot;
+
+def format_output(api_response: dict) -&gt; dict:
+    &quot;&quot;&quot;
+    Transforms the raw API response into a standardized format.
+    
+    Args:
+        api_response (dict): The raw response from the API caller.
+        
+    Returns:
+        dict: A dictionary containing:
+            - &quot;result&quot;: The generated text from the API.
+            - &quot;raw&quot;: The full, unmodified API response.
+            - Optionally, you can add extra keys for metadata (e.g., fallback_used, processing_time, etc.)
+    
+    Raises:
+        ValueError: If the expected keys are not found in the API response.
+    &quot;&quot;&quot;
+    try:
+        # Extract the generated text.
+        # This assumes the response structure is similar to OpenAI&#x27;s:
+        # {&#x27;choices&#x27;: [{&#x27;message&#x27;: {&#x27;content&#x27;: &lt;generated_text&gt;}}], ... }
+        generated_text = api_response[&#x27;choices&#x27;][0][&#x27;message&#x27;][&#x27;content&#x27;]
+    except (KeyError, IndexError) as e:
+        raise ValueError(&quot;Unexpected API response format. Ensure the API response conforms to expected structure.&quot;) from e
+    
+    # Construct and return the standardized output.
+    return {
+        &quot;result&quot;: generated_text,
+        &quot;raw&quot;: api_response,
+        # Additional metadata can be added here, for example:
+        # &quot;fallback_used&quot;: &lt;True/False&gt;, &quot;details&quot;: &quot;...&quot; etc.
+    }
+
+# For local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     # Simulate a raw API response (this structure should match the actual API&#x27;s response)
+#     simulated_response = {
+#         &quot;choices&quot;: [
+#             {&quot;message&quot;: {&quot;content&quot;: &quot;This is a sample generated text.&quot;}}
+#         ],
+#         &quot;usage&quot;: {&quot;total_tokens&quot;: 50}
+#     }
+#     output = format_output(simulated_response)
+#     print(output)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-30'>src/hivechain/pipeline.py</h2>
+  <pre><code class='language-python'># pipeline.py
+&quot;&quot;&quot;
+Module: pipeline.py
+
+Overview:
+    This module orchestrates the complete processing of raw user input through the HiveChain pipeline.
+    It validates and formats the input (using a standard or fallback formatter), calls the API via the
+    provider adapter through the api_caller module, and formats the API response.
+    Optionally, it wraps the response with additional HiveChain metadata.
+
+Responsibilities:
+    1. Input Processing:
+        - Validate raw input using input_formatter.
+        - Use fallback_formatter if the input does not match expected schema.
+        - Otherwise, use standard_formatter.
+    
+    2. API Invocation:
+        - Determine the model to use (defaulting to the configuration if unspecified).
+        - Call the backend API via the api_caller module.
+    
+    3. Response Wrapping:
+        - If wrap_response is True (or if the raw response is not dict-like), return a dictionary with:
+              &quot;raw&quot;: the full API response,
+              &quot;result&quot;: the extracted generated text,
+              &quot;fallback_used&quot;: a flag indicating if fallback formatting was applied.
+        - Otherwise, return the raw API response.
+
+Usage:
+    Call process_request() with the raw input and any optional overrides.
+    Set wrap_response=True to obtain HiveChain metadata along with the API response.
+&quot;&quot;&quot;
+
+from hivechain.input_formatter import format_input
+from hivechain.fallback_formatter import sanitize_input
+from hivechain.standard_formatter import standard_format_input
+from hivechain.api_caller import call_api
+# Note: output_formatter is available for further processing if needed.
+from hivechain.hivechain_core import get_config
+
+def process_request(raw_input: str, model_name: str = None, temperature: float = None,
+                    max_tokens: int = None, wrap_response: bool = False) -&gt; dict:
+    &quot;&quot;&quot;
+    Processes raw user input through the complete HiveChain pipeline.
+
+    Args:
+        raw_input (str): The raw user input.
+        model_name (str, optional): The model name to use. If None, defaults to the configuration&#x27;s default.
+        temperature (float, optional): Override for temperature.
+        max_tokens (int, optional): Override for maximum tokens.
+        wrap_response (bool, optional): If True, returns a dictionary containing:
+                                        - &quot;raw&quot;: the raw API response,
+                                        - &quot;result&quot;: the extracted generated text,
+                                        - &quot;fallback_used&quot;: a flag indicating if fallback formatting was applied.
+                                        Defaults to False (returning the raw response).
+
+    Returns:
+        dict: Either the raw API response or a wrapped response with metadata.
+    &quot;&quot;&quot;
+    # Step 1: Validate and format the input.
+    initial_structured = format_input(raw_input)
+    if not initial_structured.get(&quot;valid&quot;, False):
+        print(&quot;Warning: Input did not conform to expected schema. Using fallback formatter.&quot;)
+        structured_prompt = sanitize_input(raw_input)
+    else:
+        structured_prompt = standard_format_input(raw_input)
+    
+    # Step 2: Determine which model to use.
+    if model_name is None:
+        config = get_config()
+        model_name = config.get(&quot;default_model&quot;, &quot;openai&quot;)
+    
+    # Step 3: Call the API using the structured prompt.
+    raw_response = call_api(structured_prompt, model_name, temperature, max_tokens)
+    
+    # Debug: Uncomment the lines below for debugging purposes.
+    # print(&quot;DEBUG: wrap_response =&quot;, wrap_response)
+    # print(&quot;DEBUG: type(raw_response) =&quot;, type(raw_response))
+    
+    # Step 4: Wrap the response if requested or if the raw response is not dict-like.
+    if wrap_response or not hasattr(raw_response, &quot;get&quot;):
+        try:
+            generated_text = raw_response.choices[0].message.content
+        except (AttributeError, IndexError):
+            generated_text = &quot;&quot;
+        return {
+            &quot;raw&quot;: raw_response,
+            &quot;result&quot;: generated_text,
+            &quot;fallback_used&quot;: structured_prompt.get(&quot;fallback&quot;, False)
+        }
+    else:
+        return raw_response
+
+# For local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     test_input = &quot;Hello, tell me a little about yourself.&quot;
+#     result = process_request(test_input, model_name=&quot;openai&quot;, wrap_response=True)
+#     print(&quot;Final Output:&quot;, result)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-31'>src/hivechain/provider_adapters/__init__.py</h2>
+  <pre><code class='language-python'></code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-32'>src/hivechain/provider_adapters/deepseek_provider.py</h2>
+  <pre><code class='language-python'># deepseek_provider.py
+&quot;&quot;&quot;
+Module: deepseek_provider.py
+Responsibility:
+  - Adapter for DeepSeek.
+  - Implements generate_text(prompt, params) to call the DeepSeek API.
+  - Uses environment variable DEEPSEEK_API_KEY and a provider-specific API base.
+  
+Keywords: adapter, vendor-specific.
+  
+TODO: Integrate with DeepSeek&#x27;s actual API if different from OpenAI&#x27;s interface.
+&quot;&quot;&quot;
+
+import os
+import openai  # Assuming DeepSeek uses an OpenAI-compatible interface
+
+def generate_text(prompt: str, params: dict) -&gt; dict:
+    &quot;&quot;&quot;
+    Calls the DeepSeek API to generate text based on the prompt.
+    
+    Args:
+        prompt (str): The input prompt.
+        params (dict): Parameters including:
+                       - &quot;engine&quot;: model identifier (default &quot;deepseek-chat&quot;)
+                       - &quot;temperature&quot;: generation temperature (default 0.5)
+                       - &quot;max_tokens&quot;: maximum tokens (default 512)
+                       - &quot;api_base&quot;: DeepSeek endpoint (default &quot;https://api.deepseek.com&quot;)
+    
+    Returns:
+        dict: The API response.
+    &quot;&quot;&quot;
+    openai.api_key = os.getenv(&quot;DEEPSEEK_API_KEY&quot;)
+    openai.api_base = params.get(&quot;api_base&quot;, &quot;https://api.deepseek.com&quot;)
+    
+    messages = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}]
+    
+    response = openai.OpenAI().chat.completions.create(
+        model=params.get(&quot;engine&quot;, &quot;deepseek-chat&quot;),
+        messages=messages,
+        temperature=params.get(&quot;temperature&quot;, 0.5),
+        max_tokens=params.get(&quot;max_tokens&quot;, 512)
+    )
+    
+    return response
+
+# For local testing, you might add:
+# if __name__ == &quot;__main__&quot;:
+#     test_params = {&quot;engine&quot;: &quot;deepseek-chat&quot;, &quot;temperature&quot;: 0.5, &quot;max_tokens&quot;: 512}
+#     print(generate_text(&quot;Explain deep learning in simple terms.&quot;, test_params))
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-33'>src/hivechain/provider_adapters/huggingface_provider.py</h2>
+  <pre><code class='language-python'># huggingface_provider.py
+&quot;&quot;&quot;
+Module: huggingface_provider.py
+Responsibility:
+  - Placeholder adapter for HuggingFace models.
+  - Implements generate_text(prompt, params) as a stub for future integration.
+  
+Keywords: adapter, extendability.
+  
+TODO: Integrate HuggingFace&#x27;s API or local inference mechanisms.
+&quot;&quot;&quot;
+
+def generate_text(prompt: str, params: dict) -&gt; dict:
+    &quot;&quot;&quot;
+    Simulates generating text using a HuggingFace model.
+    
+    Args:
+        prompt (str): The input prompt.
+        params (dict): Parameters for text generation.
+    
+    Returns:
+        dict: A simulated API response.
+    &quot;&quot;&quot;
+    # #Placeholder: Replace this stub with actual HuggingFace integration.
+    return {
+        &quot;choices&quot;: [
+            {&quot;message&quot;: {&quot;content&quot;: &quot;This is a placeholder response from HuggingFace adapter.&quot;}}
+        ]
+    }
+
+# For local testing, you might add:
+# if __name__ == &quot;__main__&quot;:
+#     test_params = {&quot;engine&quot;: &quot;mistral-7b&quot;, &quot;temperature&quot;: 0.5, &quot;max_tokens&quot;: 8192}
+#     print(generate_text(&quot;What is the capital of France?&quot;, test_params))
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-34'>src/hivechain/provider_adapters/openai_provider.py</h2>
+  <pre><code class='language-python'># openai_provider.py
+&quot;&quot;&quot;
+Module: openai_provider.py
+Responsibility:
+  - Adapter for OpenAI.
+  - Implements generate_text(prompt, params) using OpenAI&#x27;s API.
+  - Uses environment variable OPENAI_API_KEY and standard OpenAI endpoint.
+  
+Keywords: adapter, abstraction, OpenAI.
+&quot;&quot;&quot;
+
+import os
+import openai
+
+def generate_text(prompt: str, params: dict) -&gt; dict:
+    &quot;&quot;&quot;
+    Calls the OpenAI API to generate text based on the prompt.
+    
+    Args:
+        prompt (str): The input prompt.
+        params (dict): Parameters including:
+                       - &quot;engine&quot;: model identifier (default &quot;gpt-3.5-turbo&quot;)
+                       - &quot;temperature&quot;: generation temperature (default 0.7)
+                       - &quot;max_tokens&quot;: maximum tokens (default 1000)
+    
+    Returns:
+        dict: The API response.
+    &quot;&quot;&quot;
+    openai.api_key = os.getenv(&quot;OPENAI_API_KEY&quot;)
+    openai.api_base = &quot;https://api.openai.com/v1&quot;
+    
+    messages = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}]
+    
+    response = openai.OpenAI().chat.completions.create(
+        model=params.get(&quot;engine&quot;, &quot;gpt-3.5-turbo&quot;),
+        messages=messages,
+        temperature=params.get(&quot;temperature&quot;, 0.7),
+        max_tokens=params.get(&quot;max_tokens&quot;, 1000)
+    )
+    
+    return response
+
+# For local testing, you might add:
+# if __name__ == &quot;__main__&quot;:
+#     test_params = {&quot;engine&quot;: &quot;gpt-3.5-turbo&quot;, &quot;temperature&quot;: 0.7, &quot;max_tokens&quot;: 1000}
+#     print(generate_text(&quot;Tell me a joke about programming.&quot;, test_params))
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-35'>src/hivechain/request_builder.py</h2>
+  <pre><code class='language-python'># request_builder.py
+&quot;&quot;&quot;
+Module: request_builder.py
+Description:
+  Constructs the API request payload by converting a structured prompt into the format
+  expected by the backend API. This module separates the request construction from the
+  network call, enabling easier customization and extension.
+
+Key Tasks:
+  - Build a basic payload (e.g., a list of messages for chat completions).
+  - Provide a clear placeholder for additional logic (e.g., inserting context or system messages).
+
+Keywords: payload, construction, abstraction.
+&quot;&quot;&quot;
+
+def build_request_payload(structured_prompt: dict) -&gt; dict:
+    &quot;&quot;&quot;
+    Constructs the request payload for the API call.
+
+    Args:
+        structured_prompt (dict): A dictionary containing at least a &quot;prompt&quot; key with the text.
+
+    Returns:
+        dict: A dictionary representing the payload to be sent to the API.
+    
+    Example:
+        Input: {&quot;prompt&quot;: &quot;Tell me a joke about programming.&quot;, ...}
+        Output: {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Tell me a joke about programming.&quot;}]}
+
+    #Placeholder: Extend with additional logic to incorporate context, system messages,
+    # or multi-turn conversation data as needed.
+    &quot;&quot;&quot;
+    payload = {
+        &quot;messages&quot;: [
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: structured_prompt.get(&quot;prompt&quot;, &quot;&quot;)}
+        ]
+    }
+    
+    # #Placeholder: Insert additional messages, context, or formatting as required in the future.
+    
+    return payload
+
+# For local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     test_prompt = {&quot;prompt&quot;: &quot;Tell me a joke about programming.&quot;, &quot;fallback&quot;: False, &quot;details&quot;: &quot;Standard formatting applied.&quot;}
+#     print(build_request_payload(test_prompt))
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-36'>src/hivechain/response_processor.py</h2>
+  <pre><code class='language-python'># response_processor.py
+&quot;&quot;&quot;
+Module: response_processor.py
+Description:
+  Parses and standardizes API responses.
+  Extracts the generated text from the API response and optionally converts response objects
+  to dictionaries if needed.
+  
+Key Tasks:
+  - Extract generated text.
+  - Optionally convert the response object to a dict (e.g., via .to_dict()) if the API supports it.
+  
+Keywords: extraction, standardization, formatting.
+&quot;&quot;&quot;
+
+def process_response(api_response) -&gt; dict:
+    &quot;&quot;&quot;
+    Parses the raw API response and standardizes it.
+    
+    Args:
+        api_response: The raw response object returned by the API call.
+        
+    Returns:
+        dict: A standardized dictionary containing:
+            - &quot;result&quot;: The generated text extracted from the response.
+            - &quot;raw&quot;: The full raw API response.
+    
+    #Placeholder: If needed, convert the api_response to a dictionary using .to_dict()
+    &quot;&quot;&quot;
+    try:
+        # Attempt to extract the generated text using attribute access.
+        generated_text = api_response.choices[0].message.content
+    except (AttributeError, IndexError) as e:
+        raise ValueError(&quot;Unexpected API response format: could not extract generated text.&quot;) from e
+
+    # Return a standardized dictionary.
+    return {
+        &quot;result&quot;: generated_text,
+        &quot;raw&quot;: api_response
+    }
+
+# For local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     # Simulate a raw API response object (dummy example)
+#     class FakeMessage:
+#         def __init__(self, content):
+#             self.content = content
+#     class FakeChoice:
+#         def __init__(self, content):
+#             self.message = FakeMessage(content)
+#     class FakeResponse:
+#         def __init__(self, content):
+#             self.choices = [FakeChoice(content)]
+#     fake_response = FakeResponse(&quot;This is a sample generated text.&quot;)
+#     processed = process_response(fake_response)
+#     print(processed)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-37'>src/hivechain/retriever.py</h2>
+  <pre><code class='language-python'># retriever.py
+&quot;&quot;&quot;
+Module: retriever.py
+Description:
+  Provides retrieval-augmented generation (RAG) capabilities.
+  For now, this module returns an empty context or dummy data.
+  In the future, integrate vector search or document retrieval to provide relevant external context.
+  
+Key Tasks:
+  - Initially return an empty context or placeholder data.
+  - Future: Replace with a real retrieval system (e.g., vector search, database query, etc.).
+  
+Keywords: retrieval, external context, RAG, pluggable.
+&quot;&quot;&quot;
+
+def retrieve_context(query: str) -&gt; dict:
+    &quot;&quot;&quot;
+    Retrieves external context based on the query.
+    
+    Args:
+        query (str): The user query for which to retrieve relevant external context.
+        
+    Returns:
+        dict: A dictionary containing the retrieved context.
+              For now, returns an empty context.
+    
+    #Placeholder: Integrate with a vector search or document retrieval system in the future.
+    &quot;&quot;&quot;
+    # Dummy implementation: return an empty context.
+    return {
+        &quot;context&quot;: &quot;&quot;
+    }
+
+# For local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     test_query = &quot;What is the capital of France?&quot;
+#     result = retrieve_context(test_query)
+#     print(&quot;Retrieved context:&quot;, result)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+  <hr>
+  <h2 id='file-38'>src/hivechain/standard_formatter.py</h2>
+  <pre><code class='language-python'># standard_formatter.py
+&quot;&quot;&quot;
+Module: standard_formatter.py
+Responsibility:
+  - Format input that has been validated as conforming to expected patterns.
+  - Convert the valid raw input into a structured prompt.
+  - This module is designed to be modular so that you can later extend its behavior
+    (e.g., adding punctuation, converting to a specific JSON structure, etc.)
+&quot;&quot;&quot;
+
+def standard_format_input(raw_input: str) -&gt; dict:
+    &quot;&quot;&quot;
+    Processes the valid input into a structured prompt.
+    
+    Args:
+        raw_input (str): The raw user input that has been validated.
+        
+    Returns:
+        dict: A dictionary containing:
+            - &quot;prompt&quot;: the formatted text,
+            - &quot;fallback&quot;: False (indicating no fallback was applied),
+            - &quot;details&quot;: a note describing that standard formatting was used.
+            
+    #Placeholder: Extend with additional formatting logic if needed (e.g., punctuation, capitalization).
+    &quot;&quot;&quot;
+    # Minimal formatting: trim whitespace.
+    formatted = raw_input.strip()
+    
+    return {
+        &quot;prompt&quot;: formatted,
+        &quot;fallback&quot;: False,
+        &quot;details&quot;: &quot;Standard formatting applied. #Placeholder for extended formatting logic.&quot;
+    }
+
+# For local testing, you can uncomment the block below:
+# if __name__ == &quot;__main__&quot;:
+#     test_input = &quot;Hello, how are you doing?&quot;
+#     result = standard_format_input(test_input)
+#     print(result)
+</code></pre>
+  <p><a href='#top'>Back to Top</a></p>
+</body>
+</html>
