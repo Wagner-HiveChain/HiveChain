@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html lang='en'>
-<head>
-  <meta charset='UTF-8'>
-  <title>HiveChain Codebase</title>
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css' rel='stylesheet' />
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js'></script>
-</head>
-<body>
-  <a id='top'></a>
-  <h1>HiveChain Codebase</h1>
-  <p>Last updated: 2025-02-10 04:57:52</p>
-  <h2>Table of Contents</h2>
-  <ul>
-    <li><a href='#file-0'>README.md</a></li>
-    <li><a href='#file-1'>config.json</a></li>
-    <li><a href='#file-2'>docs/Apache License 2.0.md</a></li>
-    <li><a href='#file-3'>docs/CLA.md</a></li>
-    <li><a href='#file-4'>docs/CODE_OF_CONDUCT.md</a></li>
-    <li><a href='#file-5'>docs/CONTRIBUTING.md</a></li>
-    <li><a href='#file-6'>docs/Commercial License Agreement.md</a></li>
-    <li><a href='#file-7'>docs/FAQ.md</a></li>
-    <li><a href='#file-8'>docs/Getting_Started.md</a></li>
-    <li><a href='#file-9'>docs/High-Level_Roadmap.md</a></li>
-    <li><a href='#file-10'>docs/Long-Term aspirational plan to reward contributions.md</a></li>
-    <li><a href='#file-11'>docs/Trademark_Statement.md</a></li>
-    <li><a href='#file-12'>docs/Vision.md</a></li>
-    <li><a href='#file-13'>docs/index.html</a></li>
-    <li><a href='#file-14'>docs/under-construction.html</a></li>
-    <li><a href='#file-15'>docs/website/styles.css</a></li>
-    <li><a href='#file-16'>quick tools/concatenate_code.py</a></li>
-    <li><a href='#file-17'>run.py</a></li>
-    <li><a href='#file-18'>setup.py</a></li>
-    <li><a href='#file-19'>src/hivechain/__init__.py</a></li>
-    <li><a href='#file-20'>src/hivechain/agent_manager.py</a></li>
-    <li><a href='#file-21'>src/hivechain/api_caller.py</a></li>
-    <li><a href='#file-22'>src/hivechain/cli.py</a></li>
-    <li><a href='#file-23'>src/hivechain/config_handler.py</a></li>
-    <li><a href='#file-24'>src/hivechain/config_validator.py</a></li>
-    <li><a href='#file-25'>src/hivechain/fallback_formatter.py</a></li>
-    <li><a href='#file-26'>src/hivechain/hivechain_core.py</a></li>
-    <li><a href='#file-27'>src/hivechain/input_formatter.py</a></li>
-    <li><a href='#file-28'>src/hivechain/memory_manager.py</a></li>
-    <li><a href='#file-29'>src/hivechain/output_formatter.py</a></li>
-    <li><a href='#file-30'>src/hivechain/pipeline.py</a></li>
-    <li><a href='#file-31'>src/hivechain/provider_adapters/__init__.py</a></li>
-    <li><a href='#file-32'>src/hivechain/provider_adapters/deepseek_provider.py</a></li>
-    <li><a href='#file-33'>src/hivechain/provider_adapters/huggingface_provider.py</a></li>
-    <li><a href='#file-34'>src/hivechain/provider_adapters/openai_provider.py</a></li>
-    <li><a href='#file-35'>src/hivechain/request_builder.py</a></li>
-    <li><a href='#file-36'>src/hivechain/response_processor.py</a></li>
-    <li><a href='#file-37'>src/hivechain/retriever.py</a></li>
-    <li><a href='#file-38'>src/hivechain/standard_formatter.py</a></li>
-  </ul>
-  <hr>
-  <h2 id='file-0'>README.md</h2>
-  <pre><code class='language-markdown'># HiveChain: Redefining AI Development
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>HiveChain Codebase</title>
+    <!-- Prism.js theme -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css' rel='stylesheet' />
+  </head>
+  <body>
+    <a id='top'></a>
+    <h1>HiveChain Codebase</h1>
+    <p>Last updated: 2025-02-10 06:27:40</p>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href='#file-0'>README.md</a></li>
+      <li><a href='#file-1'>config.json</a></li>
+      <li><a href='#file-2'>docs/Apache License 2.0.md</a></li>
+      <li><a href='#file-3'>docs/CLA.md</a></li>
+      <li><a href='#file-4'>docs/CODE_OF_CONDUCT.md</a></li>
+      <li><a href='#file-5'>docs/CONTRIBUTING.md</a></li>
+      <li><a href='#file-6'>docs/Commercial License Agreement.md</a></li>
+      <li><a href='#file-7'>docs/FAQ.md</a></li>
+      <li><a href='#file-8'>docs/Getting_Started.md</a></li>
+      <li><a href='#file-9'>docs/High-Level_Roadmap.md</a></li>
+      <li><a href='#file-10'>docs/Long-Term aspirational plan to reward contributions.md</a></li>
+      <li><a href='#file-11'>docs/Trademark_Statement.md</a></li>
+      <li><a href='#file-12'>docs/Vision.md</a></li>
+      <li><a href='#file-13'>docs/index.html</a></li>
+      <li><a href='#file-14'>docs/under-construction.html</a></li>
+      <li><a href='#file-15'>docs/website/styles.css</a></li>
+      <li><a href='#file-16'>quick tools/Codebase_Generator.py</a></li>
+      <li><a href='#file-17'>run.py</a></li>
+      <li><a href='#file-18'>setup.py</a></li>
+      <li><a href='#file-19'>src/hivechain/__init__.py</a></li>
+      <li><a href='#file-20'>src/hivechain/agent_manager.py</a></li>
+      <li><a href='#file-21'>src/hivechain/api_caller.py</a></li>
+      <li><a href='#file-22'>src/hivechain/cli.py</a></li>
+      <li><a href='#file-23'>src/hivechain/config_handler.py</a></li>
+      <li><a href='#file-24'>src/hivechain/config_validator.py</a></li>
+      <li><a href='#file-25'>src/hivechain/fallback_formatter.py</a></li>
+      <li><a href='#file-26'>src/hivechain/hivechain_core.py</a></li>
+      <li><a href='#file-27'>src/hivechain/input_formatter.py</a></li>
+      <li><a href='#file-28'>src/hivechain/memory_manager.py</a></li>
+      <li><a href='#file-29'>src/hivechain/output_formatter.py</a></li>
+      <li><a href='#file-30'>src/hivechain/pipeline.py</a></li>
+      <li><a href='#file-31'>src/hivechain/provider_adapters/__init__.py</a></li>
+      <li><a href='#file-32'>src/hivechain/provider_adapters/deepseek_provider.py</a></li>
+      <li><a href='#file-33'>src/hivechain/provider_adapters/huggingface_provider.py</a></li>
+      <li><a href='#file-34'>src/hivechain/provider_adapters/openai_provider.py</a></li>
+      <li><a href='#file-35'>src/hivechain/request_builder.py</a></li>
+      <li><a href='#file-36'>src/hivechain/response_processor.py</a></li>
+      <li><a href='#file-37'>src/hivechain/retriever.py</a></li>
+      <li><a href='#file-38'>src/hivechain/standard_formatter.py</a></li>
+    </ul>
+    <hr>
+    <h2 id='file-0'>README.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># HiveChain: Redefining AI Development
 
 **What if building powerful AI workflows wasn’t restricted by closed, vendor-managed APIs?**  
 What if you—*the developer*—could orchestrate advanced reasoning, memory management, and multi-agent collaboration locally, with full transparency and a performance-based rewards model?
@@ -251,10 +255,14 @@ pip install hivechain
 &lt;/dependency&gt;
 
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-1'>config.json</h2>
-  <pre><code class='language-json'>{
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-1'>config.json</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-json'>{
   &quot;default_provider&quot;: &quot;openai&quot;,
   &quot;providers&quot;: {
     &quot;openai&quot;: {
@@ -477,10 +485,14 @@ pip install hivechain
   }
 }
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-2'>docs/Apache License 2.0.md</h2>
-  <pre><code class='language-markdown'># Apache License 2.0 with HiveChain Commercial Clause
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-2'>docs/Apache License 2.0.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># Apache License 2.0 with HiveChain Commercial Clause
 
 ## Apache License
 
@@ -522,10 +534,14 @@ For details on commercial licensing, visit: **[HiveChain Commercial License Agre
 By using this software, you acknowledge that you understand and agree to these licensing terms.
 
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-3'>docs/CLA.md</h2>
-  <pre><code class='language-markdown'># HiveChain Contributor License Agreement (CLA)
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-3'>docs/CLA.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># HiveChain Contributor License Agreement (CLA)
 
 ## Introduction
 Thank you for your interest in contributing to the HiveChain project. This Contributor License Agreement (CLA) defines the terms under which contributions are made to HiveChain, ensuring that all intellectual property rights are retained by HiveChain and that the project remains free for personal use while maintaining commercial licensing requirements.
@@ -571,10 +587,14 @@ By contributing, you acknowledge that you have read and agree to this CLA. If yo
 
 *This CLA is designed to align with HiveChain’s mission of transparency, intellectual property retention, and ethical AI development. If you have questions, contact the HiveChain maintainers.*
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-4'>docs/CODE_OF_CONDUCT.md</h2>
-  <pre><code class='language-markdown'># Code of Conduct
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-4'>docs/CODE_OF_CONDUCT.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># Code of Conduct
 
 ## Our Pledge
 We, as members, contributors, and leaders of the HiveChain community, pledge to make participation in our project a harassment-free experience for everyone. We commit to treating everyone with respect, professionalism, and patience, regardless of background or experience. Our community is built on collaboration and trust, and we will work together to foster an environment that is welcoming and inclusive.
@@ -608,10 +628,14 @@ Project maintainers who do not follow or enforce this Code of Conduct in good fa
 ## Attribution
 This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available on the Contributor Covenant website. For answers to common questions about this Code of Conduct, see the FAQ on the Contributor Covenant website or contact the HiveChain maintainers for assistance.
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-5'>docs/CONTRIBUTING.md</h2>
-  <pre><code class='language-markdown'># Contributing
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-5'>docs/CONTRIBUTING.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># Contributing
 
 Thank you for considering contributing to HiveChain! Your involvement helps shape the future of AI integration and makes HiveChain more robust and useful for everyone. This guide outlines how to get involved and the best practices to follow.
 
@@ -652,10 +676,14 @@ Thank you for considering contributing to HiveChain! Your involvement helps shap
 ## Acknowledgments
 Every contribution is valuable—whether it is a major feature, a minor fix, or improvements to documentation. We thank everyone who helps improve HiveChain. By contributing, you become part of a community working together to build a powerful platform for AI integration.
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-6'>docs/Commercial License Agreement.md</h2>
-  <pre><code class='language-markdown'># HiveChain Commercial License Agreement
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-6'>docs/Commercial License Agreement.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># HiveChain Commercial License Agreement
 
 ## 1. **Introduction**
 This HiveChain Commercial License Agreement (&quot;Agreement&quot;) governs the use of the HiveChain library and software (&quot;Software&quot;) by businesses and organizations for commercial purposes. By using the Software for commercial purposes, the business (&quot;Licensee&quot;) agrees to the following terms.
@@ -719,10 +747,14 @@ By obtaining and using a HiveChain commercial license, the Licensee acknowledges
 For questions regarding licensing, contact the HiveChain maintainers.
 
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-7'>docs/FAQ.md</h2>
-  <pre><code class='language-markdown'># FAQ
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-7'>docs/FAQ.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># FAQ
 
 **What is HiveChain?**  
 HiveChain is an early-stage platform that aims to simplify the integration of advanced AI systems (such as large language models and other foundation models) into real-world business applications. It provides a framework for connecting AI models with existing processes and tools, enabling organizations to adopt AI capabilities more seamlessly and effectively.
@@ -745,10 +777,14 @@ HiveChain focuses on being a dedicated integration layer for AI that is both dev
 **What is HiveChain’s long-term vision?**  
 In the long term, HiveChain aims to evolve into a comprehensive ecosystem for AI integration. While our current focus is on delivering immediate value through the MVP, we see future potential in expanding HiveChain’s capabilities to support more complex workflows, multiple AI model types, and enterprise-level requirements. We foresee HiveChain helping to establish best practices for integrating AI in ways that align with business goals and ethical standards. Although we have ambitious ideas about shaping how businesses utilize AI, we are approaching this vision step by step. Our priority now is to build a solid foundation and demonstrate real-world usefulness. As we grow and learn from user feedback, we will carefully broaden the platform’s scope while maintaining reliability and trust.
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-8'>docs/Getting_Started.md</h2>
-  <pre><code class='language-markdown'>```markdown
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-8'>docs/Getting_Started.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'>```markdown
 # Getting Started
 
 This guide will help you set up HiveChain and run a simple example to understand how the platform works. As HiveChain is in an early MVP stage, the setup is straightforward but may require familiarity with basic development tools.
@@ -792,10 +828,14 @@ This guide will help you set up HiveChain and run a simple example to understand
 - **Contribute:**  
   If you’re interested in contributing to HiveChain’s development, read the **Contributing** guide. There are many ways to help—from coding new features or connectors to improving documentation and providing feedback on design decisions.
 ```</code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-9'>docs/High-Level_Roadmap.md</h2>
-  <pre><code class='language-markdown'># High-Level Roadmap
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-9'>docs/High-Level_Roadmap.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># High-Level Roadmap
 
 - **MVP Development (Current Stage):**  
   Our initial focus has been on building the core functionality of HiveChain. In this stage, we have developed a basic prototype that demonstrates how AI models can be connected to simple applications. The goal was to validate the concept with minimal features and gather early feedback. We have kept the scope lean to ensure the foundation is solid before expanding functionality.
@@ -814,10 +854,14 @@ This guide will help you set up HiveChain and run a simple example to understand
 
 *Note:* This high-level roadmap is subject to change. As an early-stage project, HiveChain will adapt to feedback and practical insights. Timelines are kept flexible to account for our limited team size and the complexity of integrating cutting-edge AI. Our priority is delivering a reliable and useful platform, even if that means adjusting milestones along the way.
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-10'>docs/Long-Term aspirational plan to reward contributions.md</h2>
-  <pre><code class='language-markdown'># Developer Equity Incentive Plan (Draft)
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-10'>docs/Long-Term aspirational plan to reward contributions.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># Developer Equity Incentive Plan (Draft)
 
 *This document outlines our long-term vision for a developer equity incentive plan. Please note that this plan is a work in progress and is subject to further refinement, legal review, and potential changes as HiveChain evolves.*
 
@@ -869,10 +913,14 @@ HiveChain’s Developer Equity Incentive Plan represents our commitment to rewar
 
 *Last Updated: [Insert Date]*
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-11'>docs/Trademark_Statement.md</h2>
-  <pre><code class='language-markdown'># Trademark Statement
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-11'>docs/Trademark_Statement.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># Trademark Statement
 
 &quot;HiveChain&quot; is the trademark (and brand name) associated with our AI integration platform. We ask that our community and the public respect the proper use of this name to avoid confusion and protect the project’s identity and reputation.
 
@@ -886,10 +934,14 @@ We reserve the right to enforce our trademark rights to prevent misuse. These gu
 
 If you have any questions about using the HiveChain name or logo, or if you wish to seek permission for a specific use, please contact the HiveChain team.
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-12'>docs/Vision.md</h2>
-  <pre><code class='language-markdown'># Vision
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-12'>docs/Vision.md</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-markdown'># Vision
 
 HiveChain’s vision is to make advanced AI technologies accessible and beneficial to a wide range of businesses and developers by focusing on integration and alignment. We believe that the true value of AI emerges when cutting-edge models are effectively integrated into real-world operations, bridging the gap between theoretical potential and practical impact.
 
@@ -907,10 +959,14 @@ In the long run, we see HiveChain playing a role in shaping how businesses adapt
 
 In summary, HiveChain strives to be more than just a tool—it aims to be a catalyst for change in how AI is adopted responsibly. We are starting small, but we are thinking big (with appropriate caution). Every improvement, line of code, and design decision is made with the overarching vision in mind: a world where adopting AI is easier, safer, and yields positive outcomes for businesses and society.
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-13'>docs/index.html</h2>
-  <pre><code class='language-html'>&lt;!DOCTYPE html&gt;
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-13'>docs/index.html</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-html'>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot; /&gt;
@@ -993,7 +1049,7 @@ In summary, HiveChain strives to be more than just a tool—it aims to be a cata
     &lt;/div&gt;
 
     &lt;!-- Codebase Button --&gt;
-    &lt;button class=&quot;codebase-button&quot; onclick=&quot;toggleCodebase()&quot;&gt;Codebase&lt;/button&gt;
+    &lt;a href=&quot;codebase.html&quot; class=&quot;codebase-button&quot; target=&quot;_blank&quot;&gt;View Codebase&lt;/a&gt;
 
     &lt;!-- Codebase Display --&gt;
     &lt;div id=&quot;codebaseModal&quot; class=&quot;codebase-modal&quot;&gt;&lt;/div&gt;
@@ -1023,10 +1079,14 @@ In summary, HiveChain strives to be more than just a tool—it aims to be a cata
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-14'>docs/under-construction.html</h2>
-  <pre><code class='language-html'>&lt;!DOCTYPE html&gt;
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-14'>docs/under-construction.html</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-html'>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
   &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -1088,10 +1148,14 @@ In summary, HiveChain strives to be more than just a tool—it aims to be a cata
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-15'>docs/website/styles.css</h2>
-  <pre><code class='language-css'>/* ------------------------------- GLOBAL RESET ------------------------------- */
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-15'>docs/website/styles.css</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-css'>/* ------------------------------- GLOBAL RESET ------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -1287,12 +1351,16 @@ body {
     border-bottom: 1px solid #00aaff;
 }
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-16'>quick tools/concatenate_code.py</h2>
-  <pre><code class='language-python'>#!/usr/bin/env python3
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-16'>quick tools/Codebase_Generator.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'>#!/usr/bin/env python3
 &quot;&quot;&quot;
-HiveChain Codebase HTML Generator (Hybrid Version)
+HiveChain Codebase HTML Generator (Refined Version)
 
 This script scans the project directory, collects all relevant code files,
 and generates a structured HTML file (`docs/codebase.html`) with proper formatting
@@ -1304,18 +1372,27 @@ from pathlib import Path
 from html import escape
 from datetime import datetime
 
-# ----------------------------
-# STEP 2: DEFINE DIRECTORIES &amp; SETTINGS
-# ----------------------------
+# ------------------------------------------------
+# STEP 1: DEFINE DIRECTORIES &amp; SETTINGS
+# ------------------------------------------------
 PROJECT_ROOT = Path(&quot;c:/projects/hivechain&quot;)
-DOCS_DIR = Path(&quot;c:/projects/hivechain/docs&quot;)
+DOCS_DIR = PROJECT_ROOT / &quot;docs&quot;
 DOCS_DIR.mkdir(exist_ok=True)
 OUTPUT_FILE = DOCS_DIR / &quot;codebase.html&quot;
 
-EXCLUDED_DIRS = {&quot;__pycache__&quot;, &quot;tests&quot;, &quot;migrations&quot;}
-EXCLUDED_FILES = {&quot;.env&quot;}  # Additional exclusions if needed
+# Expanded lists of directories and files to exclude
+EXCLUDED_DIRS = {
+    &quot;__pycache__&quot;, &quot;tests&quot;, &quot;migrations&quot;, &quot;node_modules&quot;,
+    &quot;.git&quot;, &quot;.vscode&quot;, &quot;.idea&quot;, &quot;__MACOSX&quot;
+}
+EXCLUDED_FILES = {
+    &quot;.env&quot;, &quot;.DS_Store&quot;, &quot;Thumbs.db&quot;, &quot;codebase.html&quot;, &quot;combined_code.log&quot;
+}
+
+# Only gather files with these extensions
 VALID_EXTENSIONS = {&quot;.py&quot;, &quot;.json&quot;, &quot;.md&quot;, &quot;.yaml&quot;, &quot;.html&quot;, &quot;.css&quot;}
 
+# Mapping file extensions to Prism syntax classes
 EXT_TO_PRISM = {
     &quot;.py&quot;: &quot;language-python&quot;,
     &quot;.json&quot;: &quot;language-json&quot;,
@@ -1325,42 +1402,50 @@ EXT_TO_PRISM = {
     &quot;.css&quot;: &quot;language-css&quot;,
 }
 
-# ----------------------------
-# STEP 3: RECURSIVELY COLLECT RELEVANT FILES
-# ----------------------------
+# ------------------------------------------------
+# STEP 2: COLLECT RELEVANT FILES
+# ------------------------------------------------
 def collect_files(root_dir: Path):
-    &quot;&quot;&quot;Recursively collect valid files while ignoring excluded directories, files, and output file.&quot;&quot;&quot;
-    hidden_dirs = {&quot;.git&quot;, &quot;.vscode&quot;, &quot;.idea&quot;}  # Common hidden directories to exclude
-    return [
-        f for f in sorted(root_dir.rglob(&quot;*&quot;), key=lambda p: p.as_posix())
-        if f.is_file()
-        and f.suffix.lower() in VALID_EXTENSIONS
-        and f.name not in EXCLUDED_FILES | {OUTPUT_FILE.name}  # Exclude the generated output file
-        and not any(ex_dir in f.parts for ex_dir in EXCLUDED_DIRS | hidden_dirs)
-    ]
-    &quot;&quot;&quot;Recursively collect valid files while ignoring excluded directories and files.&quot;&quot;&quot;
-    hidden_dirs = {&quot;.git&quot;, &quot;.vscode&quot;, &quot;.idea&quot;}  # Common hidden directories to exclude
-    return [
-        f for f in sorted(root_dir.rglob(&quot;*&quot;), key=lambda p: p.as_posix())
-        if f.is_file()
-        and f.suffix.lower() in VALID_EXTENSIONS
-        and f.name not in EXCLUDED_FILES
-        and not any(ex_dir in f.parts for ex_dir in EXCLUDED_DIRS | hidden_dirs)
-    ]
-    &quot;&quot;&quot;Recursively collect valid files while ignoring excluded directories and files.&quot;&quot;&quot;
-    return [
-        f for f in root_dir.rglob(&quot;*&quot;)
-        if f.is_file()
-        and f.suffix.lower() in VALID_EXTENSIONS
-        and f.name not in EXCLUDED_FILES
-        and not any(ex_dir in f.parts for ex_dir in EXCLUDED_DIRS)
-    ]
+    &quot;&quot;&quot;
+    Recursively collect valid files while ignoring excluded directories and files.
+    Sorted by path for consistent ordering in the output.
+    &quot;&quot;&quot;
+    all_files = root_dir.rglob(&quot;*&quot;)
+    
+    # Filter out directories and files we don&#x27;t want
+    relevant_files = []
+    for f in sorted(all_files, key=lambda p: p.as_posix()):
+        # Skip if it&#x27;s not a file
+        if not f.is_file():
+            continue
+        
+        # Skip if file extension is not in VALID_EXTENSIONS
+        if f.suffix.lower() not in VALID_EXTENSIONS:
+            continue
+        
+        # Skip if file name is in EXCLUDED_FILES
+        if f.name in EXCLUDED_FILES:
+            continue
+        
+        # Skip if any part of the path is in EXCLUDED_DIRS
+        if any(ex_dir in f.parts for ex_dir in EXCLUDED_DIRS):
+            continue
+        
+        # Also skip if this is the output file
+        if f.name == OUTPUT_FILE.name:
+            continue
+        
+        relevant_files.append(f)
+    
+    return relevant_files
 
-# ----------------------------
-# STEP 4: PROCESS FILE CONTENTS
-# ----------------------------
+# ------------------------------------------------
+# STEP 3: PROCESS FILE CONTENTS
+# ------------------------------------------------
 def process_files(file_list):
-    &quot;&quot;&quot;Read and process each file to store its escaped content and syntax class.&quot;&quot;&quot;
+    &quot;&quot;&quot;
+    Read and process each file to store its escaped content and syntax class.
+    &quot;&quot;&quot;
     file_data = []
     for fpath in file_list:
         try:
@@ -1378,78 +1463,107 @@ def process_files(file_list):
             &quot;content&quot;: escape(content),
         })
     return file_data
-    &quot;&quot;&quot;Read and escape file contents, map syntax highlighting classes.&quot;&quot;&quot;
-    file_data = []
-    for fpath in file_list:
-        try:
-            content = fpath.read_text(encoding=&quot;utf-8&quot;)
-        except Exception:
-            continue  # Skip unreadable files
-        file_data.append({
-            &quot;name&quot;: fpath.relative_to(PROJECT_ROOT).as_posix(),
-            &quot;syntax_class&quot;: EXT_TO_PRISM.get(fpath.suffix.lower(), &quot;language-none&quot;),
-            &quot;content&quot;: escape(content),
-        })
-    return file_data
 
-# ----------------------------
-# STEP 5: GENERATE HTML FILE
-# ----------------------------
+# ------------------------------------------------
+# STEP 4: GENERATE HTML OUTPUT
+# ------------------------------------------------
 def generate_html(file_data):
-    &quot;&quot;&quot;Generate structured HTML with TOC, syntax highlighting, and navigation.&quot;&quot;&quot;
+    &quot;&quot;&quot;
+    Generate structured HTML with a Table of Contents, collapsible sections,
+    syntax highlighting, and navigation links.
+    &quot;&quot;&quot;
     timestamp = datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)
+    
     html_parts = [
         &quot;&lt;!DOCTYPE html&gt;&quot;,
         &quot;&lt;html lang=&#x27;en&#x27;&gt;&quot;,
-        &quot;&lt;head&gt;&quot;,
-        &quot;  &lt;meta charset=&#x27;UTF-8&#x27;&gt;&quot;,
-        &quot;  &lt;title&gt;HiveChain Codebase&lt;/title&gt;&quot;,
-        &quot;  &lt;link href=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css&#x27; rel=&#x27;stylesheet&#x27; /&gt;&quot;,
-        &quot;  &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js&#x27;&gt;&lt;/script&gt;&quot;,
-        &quot;&lt;/head&gt;&quot;,
-        &quot;&lt;body&gt;&quot;,
-        &quot;  &lt;a id=&#x27;top&#x27;&gt;&lt;/a&gt;&quot;,
-        &quot;  &lt;h1&gt;HiveChain Codebase&lt;/h1&gt;&quot;,
-        f&quot;  &lt;p&gt;Last updated: {timestamp}&lt;/p&gt;&quot;,
-        &quot;  &lt;h2&gt;Table of Contents&lt;/h2&gt;&quot;,
-        &quot;  &lt;ul&gt;&quot;,
+        &quot;  &lt;head&gt;&quot;,
+        &quot;    &lt;meta charset=&#x27;UTF-8&#x27;&gt;&quot;,
+        &quot;    &lt;meta name=&#x27;viewport&#x27; content=&#x27;width=device-width, initial-scale=1.0&#x27;&gt;&quot;,
+        &quot;    &lt;title&gt;HiveChain Codebase&lt;/title&gt;&quot;,
+        &quot;    &lt;!-- Prism.js theme --&gt;&quot;,
+        &quot;    &lt;link href=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css&#x27; rel=&#x27;stylesheet&#x27; /&gt;&quot;,
+        &quot;  &lt;/head&gt;&quot;,
+        &quot;  &lt;body&gt;&quot;,
+        &quot;    &lt;a id=&#x27;top&#x27;&gt;&lt;/a&gt;&quot;,
+        &quot;    &lt;h1&gt;HiveChain Codebase&lt;/h1&gt;&quot;,
+        f&quot;    &lt;p&gt;Last updated: {timestamp}&lt;/p&gt;&quot;,
+        &quot;    &lt;h2&gt;Table of Contents&lt;/h2&gt;&quot;,
+        &quot;    &lt;ul&gt;&quot;,
     ]
     
+    # Build the Table of Contents
     for i, fdata in enumerate(file_data):
         file_id = f&quot;file-{i}&quot;
-        html_parts.append(f&quot;    &lt;li&gt;&lt;a href=&#x27;#{file_id}&#x27;&gt;{fdata[&#x27;name&#x27;]}&lt;/a&gt;&lt;/li&gt;&quot;)
-    html_parts.append(&quot;  &lt;/ul&gt;&quot;)
-
-    for i, fdata in enumerate(file_data):
-        file_id = f&quot;file-{i}&quot;
-        html_parts.append(&quot;  &lt;hr&gt;&quot;)
-        html_parts.append(f&quot;  &lt;h2 id=&#x27;{file_id}&#x27;&gt;{fdata[&#x27;name&#x27;]}&lt;/h2&gt;&quot;)
-        html_parts.append(f&quot;  &lt;pre&gt;&lt;code class=&#x27;{fdata[&#x27;syntax_class&#x27;]}&#x27;&gt;{fdata[&#x27;content&#x27;]}&lt;/code&gt;&lt;/pre&gt;&quot;)
-        html_parts.append(&quot;  &lt;p&gt;&lt;a href=&#x27;#top&#x27;&gt;Back to Top&lt;/a&gt;&lt;/p&gt;&quot;)
+        html_parts.append(f&quot;      &lt;li&gt;&lt;a href=&#x27;#{file_id}&#x27;&gt;{fdata[&#x27;name&#x27;]}&lt;/a&gt;&lt;/li&gt;&quot;)
+    html_parts.append(&quot;    &lt;/ul&gt;&quot;)
     
-    html_parts.append(&quot;&lt;/body&gt;&quot;)
+    # Build the collapsible code sections
+    for i, fdata in enumerate(file_data):
+        file_id = f&quot;file-{i}&quot;
+        html_parts.append(&quot;    &lt;hr&gt;&quot;)
+        html_parts.append(f&quot;    &lt;h2 id=&#x27;{file_id}&#x27;&gt;{fdata[&#x27;name&#x27;]}&lt;/h2&gt;&quot;)
+        
+        # Use a &lt;details&gt; section to make the code collapsible
+        html_parts.append(&quot;    &lt;details open&gt;&quot;)
+        html_parts.append(&quot;      &lt;summary&gt;Show/Hide Code&lt;/summary&gt;&quot;)
+        html_parts.append(&quot;      &lt;br&gt;&quot;)
+        
+        # Syntax-highlighted code block
+        html_parts.append(
+            f&quot;      &lt;pre&gt;&lt;code class=&#x27;{fdata[&#x27;syntax_class&#x27;]}&#x27;&gt;{fdata[&#x27;content&#x27;]}&lt;/code&gt;&lt;/pre&gt;&quot;
+        )
+        html_parts.append(&quot;    &lt;/details&gt;&quot;)
+        
+        # Back to top link
+        html_parts.append(&quot;    &lt;p&gt;&lt;a href=&#x27;#top&#x27;&gt;Back to Top&lt;/a&gt;&lt;/p&gt;&quot;)
+    
+    # Include the Prism.js scripts
+    html_parts.append(&quot;    &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js&#x27;&gt;&lt;/script&gt;&quot;)
+    html_parts.append(&quot;    &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js&#x27;&gt;&lt;/script&gt;&quot;)
+    html_parts.append(&quot;    &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js&#x27;&gt;&lt;/script&gt;&quot;)
+    html_parts.append(&quot;    &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js&#x27;&gt;&lt;/script&gt;&quot;)
+    html_parts.append(&quot;    &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js&#x27;&gt;&lt;/script&gt;&quot;)
+    html_parts.append(&quot;    &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js&#x27;&gt;&lt;/script&gt;&quot;)
+    html_parts.append(&quot;    &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js&#x27;&gt;&lt;/script&gt;&quot;)
+    
+    # Initialize Prism after loading the language components
+    html_parts.append(&quot;    &lt;script&gt;&quot;)
+    html_parts.append(&quot;      document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {&quot;)
+    html_parts.append(&quot;          Prism.highlightAll();&quot;)
+    html_parts.append(&quot;      });&quot;)
+    html_parts.append(&quot;    &lt;/script&gt;&quot;)
+    
+    html_parts.append(&quot;  &lt;/body&gt;&quot;)
     html_parts.append(&quot;&lt;/html&gt;&quot;)
+    
     return &quot;\n&quot;.join(html_parts)
 
-# ----------------------------
-# STEP 6: WRITE OUTPUT FILE
-# ----------------------------
+# ------------------------------------------------
+# STEP 5: WRITE TO OUTPUT FILE
+# ------------------------------------------------
 def write_output(html_result):
-    &quot;&quot;&quot;Write the generated HTML to docs/codebase.html.&quot;&quot;&quot;
+    &quot;&quot;&quot;
+    Write the generated HTML to docs/codebase.html.
+    &quot;&quot;&quot;
     OUTPUT_FILE.write_text(html_result, encoding=&quot;utf-8&quot;)
 
-# ----------------------------
-# STEP 7: PRINT SUCCESS MESSAGE
-# ----------------------------
+# ------------------------------------------------
+# STEP 6: PRINT SUCCESS MESSAGE
+# ------------------------------------------------
 def main():
     print(&quot;Collecting files...&quot;)
     files = collect_files(PROJECT_ROOT)
+    
     print(&quot;Processing files...&quot;)
     processed_data = process_files(files)
+    
     print(&quot;Generating HTML content...&quot;)
     html_result = generate_html(processed_data)
+    
     print(&quot;Writing to output file...&quot;)
     write_output(html_result)
+    
     print(f&quot;Success! Codebase HTML generated at: {OUTPUT_FILE}&quot;)
     print(&quot;Preview of generated HTML:&quot;)
     print(&quot;-&quot; * 50)
@@ -1459,10 +1573,14 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-17'>run.py</h2>
-  <pre><code class='language-python'>#!/usr/bin/env python3
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-17'>run.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'>#!/usr/bin/env python3
 # run.py
 &quot;&quot;&quot;
 Module: run.py
@@ -1511,10 +1629,14 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-18'>setup.py</h2>
-  <pre><code class='language-python'>from setuptools import setup, find_packages
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-18'>setup.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'>from setuptools import setup, find_packages
 import os
 
 # Read the long description from README.md if available
@@ -1552,14 +1674,22 @@ setup(
     },
 )
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-19'>src/hivechain/__init__.py</h2>
-  <pre><code class='language-python'></code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-20'>src/hivechain/agent_manager.py</h2>
-  <pre><code class='language-python'># agent_manager.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-19'>src/hivechain/__init__.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'></code></pre>
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-20'>src/hivechain/agent_manager.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># agent_manager.py
 &quot;&quot;&quot;
 Module: agent_manager.py
 Description:
@@ -1650,10 +1780,14 @@ class AgentManager:
 #     result = agent_manager.delegate_task(&quot;What is the weather today?&quot;, {&quot;location&quot;: &quot;San Francisco&quot;})
 #     print(&quot;Agent responses:&quot;, result)
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-21'>src/hivechain/api_caller.py</h2>
-  <pre><code class='language-python'># api_caller.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-21'>src/hivechain/api_caller.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># api_caller.py
 &quot;&quot;&quot;
 Module: api_caller.py
 Responsibility:
@@ -1764,10 +1898,14 @@ def call_api(structured_prompt: dict, model_name: str, temperature: float = None
 #     except Exception as e:
 #         print(&quot;Error during API call:&quot;, e)
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-22'>src/hivechain/cli.py</h2>
-  <pre><code class='language-python'># cli.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-22'>src/hivechain/cli.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># cli.py
 &quot;&quot;&quot;
 Module: cli.py
 Responsibility:
@@ -1826,10 +1964,14 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-23'>src/hivechain/config_handler.py</h2>
-  <pre><code class='language-python'># config_handler.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-23'>src/hivechain/config_handler.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># config_handler.py
 import json
 import os
 from dotenv import load_dotenv
@@ -1850,10 +1992,14 @@ def load_config(config_path=&quot;config.json&quot;):
     
     return config
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-24'>src/hivechain/config_validator.py</h2>
-  <pre><code class='language-python'># config_validator.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-24'>src/hivechain/config_validator.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># config_validator.py
 &quot;&quot;&quot;
 Module: config_validator.py
 Description:
@@ -1952,10 +2098,14 @@ if __name__ == &quot;__main__&quot;:
     except Exception as e:
         print(&quot;Configuration validation error:&quot;, e)
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-25'>src/hivechain/fallback_formatter.py</h2>
-  <pre><code class='language-python'># fallback_formatter.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-25'>src/hivechain/fallback_formatter.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># fallback_formatter.py
 &quot;&quot;&quot;
 Module: fallback_formatter.py
 Responsibility:
@@ -2008,10 +2158,14 @@ def sanitize_input(raw_input: str) -&gt; dict:
 #     result = sanitize_input(test_input)
 #     print(result)
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-26'>src/hivechain/hivechain_core.py</h2>
-  <pre><code class='language-python'># hivechain_core.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-26'>src/hivechain/hivechain_core.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># hivechain_core.py
 &quot;&quot;&quot;
 Module: hivechain_core.py
 Description:
@@ -2056,10 +2210,14 @@ def get_config():
         raise RuntimeError(&quot;Configuration not initialized. Please call init_config() first.&quot;)
     return _config
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-27'>src/hivechain/input_formatter.py</h2>
-  <pre><code class='language-python'># input_formatter.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-27'>src/hivechain/input_formatter.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># input_formatter.py
 &quot;&quot;&quot;
 Module: input_formatter.py
 Responsibility:
@@ -2098,10 +2256,14 @@ def format_input(raw_input: str) -&gt; dict:
 #     test_input = &quot;Hello&quot;
 #     print(format_input(test_input))
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-28'>src/hivechain/memory_manager.py</h2>
-  <pre><code class='language-python'># memory_manager.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-28'>src/hivechain/memory_manager.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># memory_manager.py
 &quot;&quot;&quot;
 Module: memory_manager.py
 Description:
@@ -2186,10 +2348,14 @@ memory_manager = MemoryManager()
 #     memory_manager.reset_memory()
 #     print(&quot;Memory after reset:&quot;, memory_manager.get_memory())
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-29'>src/hivechain/output_formatter.py</h2>
-  <pre><code class='language-python'># output_formatter.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-29'>src/hivechain/output_formatter.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># output_formatter.py
 &quot;&quot;&quot;
 Module: output_formatter.py
 Responsibility:
@@ -2246,10 +2412,14 @@ def format_output(api_response: dict) -&gt; dict:
 #     output = format_output(simulated_response)
 #     print(output)
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-30'>src/hivechain/pipeline.py</h2>
-  <pre><code class='language-python'># pipeline.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-30'>src/hivechain/pipeline.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># pipeline.py
 &quot;&quot;&quot;
 Module: pipeline.py
 
@@ -2347,14 +2517,22 @@ def process_request(raw_input: str, model_name: str = None, temperature: float =
 #     result = process_request(test_input, model_name=&quot;openai&quot;, wrap_response=True)
 #     print(&quot;Final Output:&quot;, result)
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-31'>src/hivechain/provider_adapters/__init__.py</h2>
-  <pre><code class='language-python'></code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-32'>src/hivechain/provider_adapters/deepseek_provider.py</h2>
-  <pre><code class='language-python'># deepseek_provider.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-31'>src/hivechain/provider_adapters/__init__.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'></code></pre>
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-32'>src/hivechain/provider_adapters/deepseek_provider.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># deepseek_provider.py
 &quot;&quot;&quot;
 Module: deepseek_provider.py
 Responsibility:
@@ -2404,10 +2582,14 @@ def generate_text(prompt: str, params: dict) -&gt; dict:
 #     test_params = {&quot;engine&quot;: &quot;deepseek-chat&quot;, &quot;temperature&quot;: 0.5, &quot;max_tokens&quot;: 512}
 #     print(generate_text(&quot;Explain deep learning in simple terms.&quot;, test_params))
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-33'>src/hivechain/provider_adapters/huggingface_provider.py</h2>
-  <pre><code class='language-python'># huggingface_provider.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-33'>src/hivechain/provider_adapters/huggingface_provider.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># huggingface_provider.py
 &quot;&quot;&quot;
 Module: huggingface_provider.py
 Responsibility:
@@ -2442,10 +2624,14 @@ def generate_text(prompt: str, params: dict) -&gt; dict:
 #     test_params = {&quot;engine&quot;: &quot;mistral-7b&quot;, &quot;temperature&quot;: 0.5, &quot;max_tokens&quot;: 8192}
 #     print(generate_text(&quot;What is the capital of France?&quot;, test_params))
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-34'>src/hivechain/provider_adapters/openai_provider.py</h2>
-  <pre><code class='language-python'># openai_provider.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-34'>src/hivechain/provider_adapters/openai_provider.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># openai_provider.py
 &quot;&quot;&quot;
 Module: openai_provider.py
 Responsibility:
@@ -2492,10 +2678,14 @@ def generate_text(prompt: str, params: dict) -&gt; dict:
 #     test_params = {&quot;engine&quot;: &quot;gpt-3.5-turbo&quot;, &quot;temperature&quot;: 0.7, &quot;max_tokens&quot;: 1000}
 #     print(generate_text(&quot;Tell me a joke about programming.&quot;, test_params))
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-35'>src/hivechain/request_builder.py</h2>
-  <pre><code class='language-python'># request_builder.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-35'>src/hivechain/request_builder.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># request_builder.py
 &quot;&quot;&quot;
 Module: request_builder.py
 Description:
@@ -2542,10 +2732,14 @@ def build_request_payload(structured_prompt: dict) -&gt; dict:
 #     test_prompt = {&quot;prompt&quot;: &quot;Tell me a joke about programming.&quot;, &quot;fallback&quot;: False, &quot;details&quot;: &quot;Standard formatting applied.&quot;}
 #     print(build_request_payload(test_prompt))
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-36'>src/hivechain/response_processor.py</h2>
-  <pre><code class='language-python'># response_processor.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-36'>src/hivechain/response_processor.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># response_processor.py
 &quot;&quot;&quot;
 Module: response_processor.py
 Description:
@@ -2602,10 +2796,14 @@ def process_response(api_response) -&gt; dict:
 #     processed = process_response(fake_response)
 #     print(processed)
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-37'>src/hivechain/retriever.py</h2>
-  <pre><code class='language-python'># retriever.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-37'>src/hivechain/retriever.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># retriever.py
 &quot;&quot;&quot;
 Module: retriever.py
 Description:
@@ -2644,10 +2842,14 @@ def retrieve_context(query: str) -&gt; dict:
 #     result = retrieve_context(test_query)
 #     print(&quot;Retrieved context:&quot;, result)
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-  <hr>
-  <h2 id='file-38'>src/hivechain/standard_formatter.py</h2>
-  <pre><code class='language-python'># standard_formatter.py
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <hr>
+    <h2 id='file-38'>src/hivechain/standard_formatter.py</h2>
+    <details open>
+      <summary>Show/Hide Code</summary>
+      <br>
+      <pre><code class='language-python'># standard_formatter.py
 &quot;&quot;&quot;
 Module: standard_formatter.py
 Responsibility:
@@ -2687,6 +2889,19 @@ def standard_format_input(raw_input: str) -&gt; dict:
 #     result = standard_format_input(test_input)
 #     print(result)
 </code></pre>
-  <p><a href='#top'>Back to Top</a></p>
-</body>
+    </details>
+    <p><a href='#top'>Back to Top</a></p>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js'></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          Prism.highlightAll();
+      });
+    </script>
+  </body>
 </html>
